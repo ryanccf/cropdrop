@@ -20,5 +20,6 @@ func _unhandled_input(event):
 
 func spawn(spawn_global_position):
 	var instance = vegetable_scene.instantiate()
-	instance.global_position = spawn_global_position
+	instance.global_position = Vector2(spawn_global_position.x, 0)
+	#instance.global_position = spawn_global_position
 	add_child(instance)
