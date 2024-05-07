@@ -16,6 +16,7 @@ Watermelon
 Pumpkin
 
 Region 2: Tropical Farm
+Kiwi
 Mango
 Papaya
 Banana
