@@ -1,21 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://8yrowhomjn3x"]
+[gd_scene load_steps=6 format=3 uid="uid://8yrowhomjn3x"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_b2srk"]
 [ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_elcd2"]
 [ext_resource type="Texture2D" uid="uid://cyc8snsiuedlw" path="res://assets/floor.png" id="2_mn7mr"]
+[ext_resource type="PackedScene" uid="uid://cwt44x3500kko" path="res://vegetable_factory.tscn" id="4_0e48k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6kcq"]
 size = Vector2(1514.5, 98)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_b2srk")
 
 [node name="Vegetable" parent="." instance=ExtResource("1_elcd2")]
 position = Vector2(313, 164)
 
 [node name="Vegetable2" parent="." instance=ExtResource("1_elcd2")]
-position = Vector2(201, 251)
+position = Vector2(337, 227)
 
 [node name="Vegetable3" parent="." instance=ExtResource("1_elcd2")]
-position = Vector2(322, 106)
+position = Vector2(318, 94)
 
 [node name="Playfield" type="Node2D" parent="."]
 
@@ -62,3 +65,5 @@ shape = SubResource("RectangleShape2D_c6kcq")
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
 position = Vector2(2, 0)
 texture = ExtResource("2_mn7mr")
+
+[node name="VegetableFactory" parent="." instance=ExtResource("4_0e48k")]
