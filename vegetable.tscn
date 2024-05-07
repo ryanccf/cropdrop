@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://beoc5vh60p04u"]
+
+[ext_resource type="Texture2D" uid="uid://dj8twf5o6w0rl" path="res://assets/Tomato.png" id="1_lvvjs"]
+
+[node name="Vegetable" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(18, 17)
+texture = ExtResource("1_lvvjs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(9, 11)
+build_mode = 1
+polygon = PackedVector2Array(0, 0, -3, 9, 5, 16, 14, 16, 19, 10, 20, 2, 15, -3, 4, -4)
