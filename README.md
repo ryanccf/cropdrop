@@ -7,13 +7,19 @@ As stages advance, the number of items to merge will grow.
 After a set number of stages, the region/farm will be complete, and the next set of mergable crops will appear.
 
 Region 1: Midwestern Farm
-Strawberries
-Tomatoes
-Potatoes
-Corn
-Carrots
-Watermelon
+Garlic
+Carrot
+Onion
+Potato
+Tomato
+Pepper
+Cucumber
+Broccoli
+Cauliflower
+Cabbage
+Squash
 Pumpkin
+
 
 Region 2: Tropical Farm
 Kiwi

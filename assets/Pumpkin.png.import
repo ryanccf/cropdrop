@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhf33is2dwhqe"
-path="res://.godot/imported/Pumpin.png-ce4c8b87677ef7177d3fd251db6bc474.ctex"
+path="res://.godot/imported/Pumpkin.png-ba04e67e745faba1e546f992471af095.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pumpin.png"
-dest_files=["res://.godot/imported/Pumpin.png-ce4c8b87677ef7177d3fd251db6bc474.ctex"]
+source_file="res://assets/Pumpkin.png"
+dest_files=["res://.godot/imported/Pumpkin.png-ba04e67e745faba1e546f992471af095.ctex"]
 
 [params]
 
