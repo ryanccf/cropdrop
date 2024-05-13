@@ -2,7 +2,7 @@ extends "res://vegetable.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	species = "Garlic"
+	species = "Onion"
 	super._ready()
 
 #func spawn_next_fruit():

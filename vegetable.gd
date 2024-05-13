@@ -22,7 +22,7 @@ func _process(delta):
 			if(body.has_method("get_species") and not body.is_queued_for_deletion() and species == body.get_species()):
 				body.queue_free()
 				queue_free()
-				body.spawn_next_fruit()
+				duplication_event.call((global_position+body.global_position)/2)
 		)
 		#if(body.has_method("get_species")):
 		#	print(body.get_species()))
@@ -31,6 +31,6 @@ func _process(delta):
 func get_species():
 	return species
 
-func spawn_next_fruit():
-	duplication_event.call(global_position)
-	print("spawn next fruit")
+#func spawn_next_fruit():
+#	duplication_event.call(global_position)
+#	print("spawn next fruit")
