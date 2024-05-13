@@ -3,10 +3,10 @@ extends RigidBody2D
 var species = "vegetable"
 var species_index = 0
 
-var duplication_event = func(global_position):pass
+var merge_event = func(global_position):pass
 
-func set_duplication_event(event):
-	duplication_event = event
+func on_merge(event):
+	merge_event = event
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +22,7 @@ func _process(delta):
 			if(body.has_method("get_species") and not body.is_queued_for_deletion() and species == body.get_species()):
 				body.queue_free()
 				queue_free()
-				duplication_event.call((global_position+body.global_position)/2)
+				merge_event.call((global_position+body.global_position)/2)
 		)
 		#if(body.has_method("get_species")):
 		#	print(body.get_species()))
