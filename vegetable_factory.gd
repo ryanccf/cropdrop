@@ -1,5 +1,7 @@
 extends Node2D
-@export var vegetable_scene: PackedScene = preload("res://vegetable.tscn")
+@export var vegetable_scene: PackedScene = preload("res://tomato.tscn")
+@export var garlic_scene: PackedScene = preload("res://garlic.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,5 +23,12 @@ func _unhandled_input(event):
 func spawn(spawn_global_position):
 	var instance = vegetable_scene.instantiate()
 	instance.global_position = Vector2(spawn_global_position.x, 0)
+	#instance.global_position = spawn_global_position
+	instance.set_duplication_event(spawn_garlic)
+	add_child(instance)
+
+func spawn_garlic(spawn_global_position):
+	var instance = garlic_scene.instantiate()
+	instance.global_position = Vector2(spawn_global_position.x, spawn_global_position.y)
 	#instance.global_position = spawn_global_position
 	add_child(instance)

@@ -1,18 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnfenwno78x34"]
+[gd_scene load_steps=4 format=3 uid="uid://cytqquvraotjb"]
 
-[ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_iot3l"]
-[ext_resource type="Texture2D" uid="uid://blyhfsql5gsyn" path="res://assets/Garlic.png" id="2_5axxr"]
+[ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_u5ksx"]
+[ext_resource type="Script" path="res://garlic.gd" id="2_qyvmg"]
+[ext_resource type="Texture2D" uid="uid://blyhfsql5gsyn" path="res://assets/Garlic.png" id="3_bq55u"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_od7kb"]
-radius = 6.0
-height = 18.0
+[node name="Garlic" instance=ExtResource("1_u5ksx")]
+script = ExtResource("2_qyvmg")
 
-[node name="Vegetable" instance=ExtResource("1_iot3l")]
-
-[node name="CollisionShape2D" parent="RigidBody2D" index="0"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_od7kb")
-
-[node name="Sprite2D" parent="RigidBody2D" index="1"]
-position = Vector2(1, -3)
-texture = ExtResource("2_5axxr")
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_bq55u")
