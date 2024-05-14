@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://baxye27y8nip1"]
+
+[ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_unq0m"]
+[ext_resource type="Script" path="res://squash.gd" id="2_wu13w"]
+[ext_resource type="Texture2D" uid="uid://dnx50maqfrh3p" path="res://assets/Squash.png" id="3_tdvp2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b6mrs"]
+radius = 7.13539
+height = 43.0289
+
+[node name="Squash" instance=ExtResource("1_unq0m")]
+script = ExtResource("2_wu13w")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(1.66913, -0.74314)
+rotation = 0.820305
+shape = SubResource("CapsuleShape2D_b6mrs")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_tdvp2")

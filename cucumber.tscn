@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn4jov113x47w"]
+
+[ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_q38o2"]
+[ext_resource type="Script" path="res://cucumber.gd" id="2_0sm2p"]
+[ext_resource type="Texture2D" uid="uid://wffq65nutvj" path="res://assets/Cucumber.png" id="3_sp3o7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hfsyl"]
+radius = 4.31084
+height = 28.3958
+
+[node name="Cucumber" instance=ExtResource("1_q38o2")]
+script = ExtResource("2_0sm2p")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(3, 0)
+rotation = 0.839503
+shape = SubResource("CapsuleShape2D_hfsyl")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_sp3o7")

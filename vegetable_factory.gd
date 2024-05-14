@@ -1,8 +1,18 @@
 extends Node2D
+@export var broccoli_scene: PackedScene = preload("res://broccoli.tscn")
+@export var cabbage_scene: PackedScene = preload("res://cabbage.tscn")
+@export var carrot_scene: PackedScene = preload("res://carrot.tscn")
+@export var cauliflower_scene: PackedScene = preload("res://cauliflower.tscn")
+@export var cucumber_scene: PackedScene = preload("res://cucumber.tscn")
 @export var tomato_scene: PackedScene = preload("res://tomato.tscn")
 @export var garlic_scene: PackedScene = preload("res://garlic.tscn")
 @export var onion_scene: PackedScene = preload("res://onion.tscn")
-var vegetable_scenes = [tomato_scene, garlic_scene, onion_scene]
+@export var pepper_scene: PackedScene = preload("res://pepper.tscn")
+@export var potato_scene: PackedScene = preload("res://potato.tscn")
+@export var pumpkin_scene: PackedScene = preload("res://pumpkin.tscn")
+@export var squash_scene: PackedScene = preload("res://squash.tscn")
+
+var vegetable_scenes = [carrot_scene, potato_scene, tomato_scene, garlic_scene, onion_scene, cucumber_scene, pepper_scene, squash_scene, broccoli_scene, cauliflower_scene, cabbage_scene, pumpkin_scene]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
