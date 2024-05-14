@@ -2,21 +2,22 @@ extends RigidBody2D
 
 var species = "vegetable"
 var species_index = 0
-
+var target_scale = 5
 var merge_event = func(global_position):pass
 
 func on_merge(event):
 	merge_event = event
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var vegetables = ["Tomato", "Garlic"]
 	contact_monitor = true
 	max_contacts_reported = 1
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	set_scale(Vector2(target_scale,target_scale))
+	$CollisionShape2D.set_scale(Vector2(target_scale, target_scale))
+	#$CollisionShape2D.scale=Vector2(target_scale, target_scale)
 	if(not is_queued_for_deletion()):
 		get_colliding_bodies().map(func(body):
 			if(body.has_method("get_species") and not body.is_queued_for_deletion() and species == body.get_species()):
@@ -24,13 +25,6 @@ func _process(delta):
 				queue_free()
 				merge_event.call((global_position+body.global_position)/2)
 		)
-		#if(body.has_method("get_species")):
-		#	print(body.get_species()))
-			
 
 func get_species():
 	return species
-
-#func spawn_next_fruit():
-#	duplication_event.call(global_position)
-#	print("spawn next fruit")

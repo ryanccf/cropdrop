@@ -12,6 +12,7 @@ extends Node2D
 @export var pumpkin_scene: PackedScene = preload("res://pumpkin.tscn")
 @export var squash_scene: PackedScene = preload("res://squash.tscn")
 
+var vegetable_size=2
 var vegetable_scenes = [carrot_scene, potato_scene, tomato_scene, garlic_scene, onion_scene, cucumber_scene, pepper_scene, squash_scene, broccoli_scene, cauliflower_scene, cabbage_scene, pumpkin_scene]
 
 # Called when the node enters the scene tree for the first time.
@@ -37,6 +38,7 @@ func spawn_vegetable(vegetable_index, spawn_global_position):
 	instance.global_position = spawn_global_position
 	instance.on_merge(_bind_spawn_vegetable(_loop_index(vegetable_index+1)))
 	add_child(instance)
+	
 
 func _loop_index(next_index):
 	return next_index if vegetable_scenes.size() > next_index else 0
