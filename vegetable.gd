@@ -28,3 +28,6 @@ func _process(delta):
 
 func get_species():
 	return species
+
+func get_texture():
+	return $Sprite2D.texture

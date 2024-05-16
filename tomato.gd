@@ -1,5 +1,5 @@
 extends "res://vegetable.gd"
 
 func _ready():
-	species = "Pepper"
+	species = "Tomato"
 	super._ready()
