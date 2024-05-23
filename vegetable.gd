@@ -15,8 +15,8 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	set_scale(Vector2(target_scale,target_scale))
 	$CollisionShape2D.set_scale(Vector2(target_scale, target_scale))
+	set_scale(Vector2(target_scale,target_scale))
 	#$CollisionShape2D.scale=Vector2(target_scale, target_scale)
 	if(not is_queued_for_deletion()):
 		get_colliding_bodies().map(func(body):
