@@ -45,7 +45,24 @@ func spawn_vegetable(vegetable_index, spawn_global_position):
 	var instance = vegetable_scenes[vegetable_index].instantiate()
 	instance.global_position = spawn_global_position
 	instance.on_merge(_bind_spawn_vegetable(_loop_index(vegetable_index+1)))
+	check_win(vegetable_index)
 	add_child(instance)
+	
+func check_win(vegetable_index):
+	if vegetable_index + 2 > vegetable_scenes.size():
+		show_win_label()
+		get_tree().paused = true
+		unpause_game()
+	
+	
+		
+func show_win_label():
+	$WinLabel.visible = true
+	
+func unpause_game():
+	await get_tree().create_timer(5.0).timeout
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func _loop_index(next_index):
 	return next_index if vegetable_scenes.size() > next_index else 0
@@ -75,15 +92,3 @@ func choose_vegetable():
 	if range(91,100).has(rando):
 		chosen_vegetable = 5
 	return chosen_vegetable
-#func spawn_tomato(spawn_global_position):
-#	var instance = tomato_scene.instantiate()
-#	instance.global_position = spawn_global_position
-#	instance.set_duplication_event(spawn_garlic)
-#	add_child(instance)
-
-#func spawn_garlic(spawn_global_position):
-#	var instance = garlic_scene.instantiate()
-#	instance.global_position = Vector2(spawn_global_position.x, spawn_global_position.y)
-#	#instance.global_position = spawn_global_position
-#	instance.set_duplication_event(spawn_tomato)
-#	add_child(instance)

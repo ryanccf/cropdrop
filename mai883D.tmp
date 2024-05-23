@@ -13,7 +13,7 @@ size = Vector2(1514.5, 98)
 size = Vector2(572, 20)
 
 [node name="Main" type="Node2D"]
-process_mode = 1
+position = Vector2(-28, 16)
 script = ExtResource("1_b2srk")
 
 [node name="Playfield" type="Node2D" parent="."]
@@ -44,7 +44,7 @@ position = Vector2(2.75, 2)
 shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
-position = Vector2(2.00003, 4)
+position = Vector2(2, 0)
 texture = ExtResource("2_mn7mr")
 
 [node name="Wall2" type="Node2D" parent="Playfield"]
@@ -59,7 +59,7 @@ position = Vector2(2.75, 2)
 shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
-position = Vector2(2.00003, 6)
+position = Vector2(2, 0)
 texture = ExtResource("2_mn7mr")
 
 [node name="OutOfBounds" type="Node2D" parent="Playfield"]
@@ -68,7 +68,6 @@ position = Vector2(320, -25)
 [node name="Area2D" type="Area2D" parent="Playfield/OutOfBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/OutOfBounds/Area2D"]
-position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_ykk47")
 
 [node name="VegetableFactory" parent="." instance=ExtResource("4_0e48k")]
@@ -82,8 +81,7 @@ position = Vector2(532, 16)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_d7qv8")
 
-[node name="WinLabel" type="RichTextLabel" parent="VegetableFactory"]
-process_mode = 3
+[node name="WinLabel" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 253.0
 offset_top = 63.0
