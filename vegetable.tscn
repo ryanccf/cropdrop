@@ -7,6 +7,8 @@
 radius = 10.0499
 
 [node name="Vegetable" type="RigidBody2D"]
+max_contacts_reported = 7
+contact_monitor = true
 script = ExtResource("1_wy20c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,3 +18,5 @@ shape = SubResource("CircleShape2D_ywfbb")
 position = Vector2(1, 1.13687e-13)
 scale = Vector2(0.90625, 0.9375)
 texture = ExtResource("1_lvvjs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
