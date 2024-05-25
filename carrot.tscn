@@ -8,6 +8,7 @@
 radius = 2.15542
 
 [node name="Carrot" instance=ExtResource("1_n2hjw")]
+scale = Vector2(2, 2)
 script = ExtResource("2_lwyvx")
 
 [node name="CollisionShape2D" parent="." index="0"]
