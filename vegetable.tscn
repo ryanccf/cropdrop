@@ -7,11 +7,13 @@
 radius = 10.0499
 
 [node name="Vegetable" type="RigidBody2D"]
+process_mode = 3
 max_contacts_reported = 7
 contact_monitor = true
 script = ExtResource("1_wy20c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+process_mode = 1
 shape = SubResource("CircleShape2D_ywfbb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

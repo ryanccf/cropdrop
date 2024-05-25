@@ -15,7 +15,7 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 var vegetable_size=2
-var vegetable_scenes = [carrot_scene, potato_scene, tomato_scene, garlic_scene, onion_scene, cucumber_scene, pepper_scene, squash_scene, broccoli_scene, cauliflower_scene, cabbage_scene, pumpkin_scene]
+var vegetable_scenes = [carrot_scene, potato_scene, tomato_scene, garlic_scene, onion_scene, cucumber_scene]#, pepper_scene, squash_scene, broccoli_scene, cauliflower_scene, cabbage_scene, pumpkin_scene]
 
 var vegetable_queue = [0,0]
 # Called when the node enters the scene tree for the first time.

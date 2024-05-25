@@ -12,22 +12,19 @@ func on_merge(event):
 func _ready():
 	contact_monitor = true
 	max_contacts_reported = 1
+	$CollisionShape2D.set_scale(Vector2(target_scale, target_scale))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	size_self()
-	#$CollisionShape2D.scale=Vector2(target_scale, target_scale)
-
-func size_self():
-	$CollisionShape2D.set_scale(Vector2(target_scale, target_scale))
 	set_scale(Vector2(target_scale,target_scale))
+	#$CollisionShape2D.scale=Vector2(target_scale, target_scale)
+	pass
 
 func get_species():
 	return species
 
 func get_texture():
 	return $Sprite2D.texture
-
 
 func _on_body_entered(body):
 	if(not is_queued_for_deletion()):

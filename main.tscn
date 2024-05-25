@@ -85,6 +85,7 @@ texture = ExtResource("4_d7qv8")
 [node name="WinLabel" type="RichTextLabel" parent="VegetableFactory"]
 process_mode = 3
 visible = false
+z_index = 10
 offset_left = 253.0
 offset_top = 63.0
 offset_right = 379.0
