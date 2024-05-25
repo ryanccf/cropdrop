@@ -15,12 +15,12 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 var vegetable_size=2
-var vegetable_scenes = [carrot_scene, potato_scene, tomato_scene, garlic_scene, onion_scene, cucumber_scene]#, pepper_scene, squash_scene, broccoli_scene, cauliflower_scene, cabbage_scene, pumpkin_scene]
+var vegetable_scenes = [garlic_scene, potato_scene, tomato_scene, onion_scene, pepper_scene, carrot_scene, cucumber_scene, squash_scene, broccoli_scene, cabbage_scene, cauliflower_scene, pumpkin_scene]
 
 var vegetable_queue = [0,0]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$VegetableChart.set_scenes(vegetable_scenes)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -90,5 +90,5 @@ func choose_vegetable():
 	if range(71,90).has(rando):
 			chosen_vegetable = 3
 	if range(91,100).has(rando):
-		chosen_vegetable = 5
+		chosen_vegetable = 4
 	return chosen_vegetable
