@@ -5,13 +5,9 @@ var species_index = 0
 var target_scale = 5
 var merge_event = func(global_position):pass
 
-func get_scale_modifier():
-	1
-
 func on_merge(event):
 	merge_event = event
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	contact_monitor = true
 	max_contacts_reported = 1
@@ -19,12 +15,9 @@ func _ready():
 	
 func modify_scale(multiplicand):
 	return multiplicand * _get_scale_modifier()
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	set_scale(Vector2(modify_scale(target_scale),modify_scale(target_scale)))
-	#$CollisionShape2D.scale=Vector2(target_scale, target_scale)
-	pass
 
 func get_species():
 	return species

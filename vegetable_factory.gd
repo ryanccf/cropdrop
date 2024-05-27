@@ -16,16 +16,14 @@ var rng = RandomNumberGenerator.new()
 
 var vegetable_size=2
 var vegetable_scenes = [garlic_scene, potato_scene, tomato_scene, onion_scene, pepper_scene, carrot_scene, cucumber_scene, squash_scene, broccoli_scene, cabbage_scene, cauliflower_scene, pumpkin_scene]
-
 var vegetable_queue = []
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	$VegetableChart.set_scenes(vegetable_scenes)
 	add_vegetable()
 	add_vegetable()
 	set_indicators()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
@@ -56,12 +54,10 @@ func check_win(vegetable_index):
 		show_win_label()
 		get_tree().paused = true
 		unpause_game()
-	
-	
-		
+
 func show_win_label():
 	$WinLabel.visible = true
-	
+
 func unpause_game():
 	await get_tree().create_timer(5.0).timeout
 	get_tree().paused = false
