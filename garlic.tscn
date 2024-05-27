@@ -11,10 +11,10 @@ height = 20.0
 [node name="Garlic" instance=ExtResource("1_u5ksx")]
 script = ExtResource("2_qyvmg")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_bq55u")
+
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_c1dha")
-
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("3_bq55u")

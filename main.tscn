@@ -123,6 +123,20 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="TimeLabel" type="RichTextLabel" parent="VegetableFactory"]
+process_mode = 3
+visible = false
+z_index = 10
+offset_left = 253.0
+offset_top = 124.0
+offset_right = 379.0
+offset_bottom = 166.0
+theme = ExtResource("5_vpsxp")
+text = "You Win!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="VegetableChart" type="Node2D" parent="VegetableFactory"]
 position = Vector2(13, 16)
 script = ExtResource("6_61vt5")

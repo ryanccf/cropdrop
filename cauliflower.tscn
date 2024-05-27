@@ -10,10 +10,10 @@ radius = 18.5277
 [node name="Cauliflower" instance=ExtResource("1_4lnul")]
 script = ExtResource("2_p7y2p")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_v5n7g")
+
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0.66913, -1.74314)
 rotation = 0.733038
 shape = SubResource("CircleShape2D_hck16")
-
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("3_v5n7g")

@@ -7,8 +7,8 @@
 [node name="Pepper" instance=ExtResource("1_hjmyf")]
 script = ExtResource("2_dllay")
 
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 1)
-
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_4dq62")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 1)
