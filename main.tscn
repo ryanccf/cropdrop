@@ -1,14 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://8yrowhomjn3x"]
+[gd_scene load_steps=11 format=3 uid="uid://8yrowhomjn3x"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b2srk"]
-[ext_resource type="Texture2D" uid="uid://cyc8snsiuedlw" path="res://assets/floor.png" id="2_mn7mr"]
+[ext_resource type="Texture2D" uid="uid://b6dv4fxsiynsb" path="res://assets/BasketPatternWall.jpeg" id="3_rh6hw"]
+[ext_resource type="Texture2D" uid="uid://d2tcr4g5xkkkq" path="res://assets/pexels-photo-301717.jpeg" id="3_voj3y"]
 [ext_resource type="PackedScene" uid="uid://cwt44x3500kko" path="res://vegetable_factory.tscn" id="4_0e48k"]
 [ext_resource type="Texture2D" uid="uid://6vrqpoxfo5er" path="res://assets/Carrot.png" id="4_d7qv8"]
+[ext_resource type="Texture2D" uid="uid://cib7srqfgmo2u" path="res://assets/buskettexture.png" id="4_gqcq7"]
 [ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="5_vpsxp"]
 [ext_resource type="Script" path="res://VegetableChart.gd" id="6_61vt5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6kcq"]
-size = Vector2(1514.5, 98)
+size = Vector2(1461.25, 123.999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykk47"]
 size = Vector2(572, 20)
@@ -30,8 +32,11 @@ position = Vector2(2.75, 2)
 shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Floor/StaticBody2D"]
-position = Vector2(2, 0)
-texture = ExtResource("2_mn7mr")
+z_index = 2
+position = Vector2(3, 1)
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_rh6hw")
 
 [node name="Wall1" type="Node2D" parent="Playfield"]
 position = Vector2(577, -148)
@@ -41,12 +46,15 @@ rotation = 1.5708
 position = Vector2(558, 570)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Wall1/StaticBody2D"]
-position = Vector2(2.75, 2)
+position = Vector2(26.502, 12.9952)
 shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
-position = Vector2(2.00003, 4)
-texture = ExtResource("2_mn7mr")
+z_index = 2
+position = Vector2(44.9165, 15.4692)
+rotation = 1.5708
+scale = Vector2(0.4, 0.39)
+texture = ExtResource("3_rh6hw")
 
 [node name="Wall2" type="Node2D" parent="Playfield"]
 position = Vector2(1173, -172)
@@ -56,12 +64,15 @@ rotation = 1.5708
 position = Vector2(558, 570)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Wall2/StaticBody2D"]
-position = Vector2(2.75, 2)
+position = Vector2(1.62595, -5.99969)
 shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
-position = Vector2(2.00003, 6)
-texture = ExtResource("2_mn7mr")
+z_index = 2
+position = Vector2(1.00207, -5.00201)
+rotation = 4.71239
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_rh6hw")
 
 [node name="OutOfBounds" type="Node2D" parent="Playfield"]
 position = Vector2(320, -25)
@@ -71,6 +82,19 @@ position = Vector2(320, -25)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/OutOfBounds/Area2D"]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_ykk47")
+
+[node name="Background" type="Node2D" parent="Playfield"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Background"]
+position = Vector2(298, 455)
+rotation = 1.5708
+scale = Vector2(1.56396, 1.7298)
+texture = ExtResource("3_voj3y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Playfield/Background"]
+position = Vector2(331, 417)
+scale = Vector2(4, 4)
+texture = ExtResource("4_gqcq7")
 
 [node name="VegetableFactory" parent="." instance=ExtResource("4_0e48k")]
 

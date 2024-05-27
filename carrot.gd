@@ -5,6 +5,4 @@ func _get_scale_modifier():
 
 func _ready():
 	species = "Carrot"
-
 	super._ready()
-	print(get_scale_modifier())
