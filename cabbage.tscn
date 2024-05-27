@@ -10,10 +10,10 @@ radius = 16.9706
 [node name="Cabbage" instance=ExtResource("1_nawa4")]
 script = ExtResource("2_l61v7")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_e56fj")
+
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(3, 1)
 rotation = 0.733038
 shape = SubResource("CircleShape2D_28yhb")
-
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("3_e56fj")

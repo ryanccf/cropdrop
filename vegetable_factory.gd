@@ -17,15 +17,19 @@ var rng = RandomNumberGenerator.new()
 var vegetable_size=2
 var vegetable_scenes = [garlic_scene, potato_scene, tomato_scene, onion_scene, pepper_scene, carrot_scene, cucumber_scene, squash_scene, broccoli_scene, cabbage_scene, cauliflower_scene, pumpkin_scene]
 var vegetable_queue = []
+var start_time = 0
+
 
 func _ready():
 	$VegetableChart.set_scenes(vegetable_scenes)
 	add_vegetable()
 	add_vegetable()
 	set_indicators()
+	start_time = Time.get_unix_time_from_system()
 
 func _process(delta):
 	pass
+	
 
 func _unhandled_input(event):
 	if event.is_echo():
@@ -57,6 +61,8 @@ func check_win(vegetable_index):
 
 func show_win_label():
 	$WinLabel.visible = true
+	$TimeLabel.visible = true
+	$TimeLabel.text = Time.get_time_string_from_unix_time(Time.get_unix_time_from_system() - start_time)
 
 func unpause_game():
 	await get_tree().create_timer(5.0).timeout

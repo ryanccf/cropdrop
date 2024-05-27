@@ -11,10 +11,10 @@ height = 43.0289
 [node name="Squash" instance=ExtResource("1_unq0m")]
 script = ExtResource("2_wu13w")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_tdvp2")
+
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(1.66913, -0.74314)
 rotation = 0.820305
 shape = SubResource("CapsuleShape2D_b6mrs")
-
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("3_tdvp2")
