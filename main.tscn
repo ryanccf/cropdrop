@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://8yrowhomjn3x"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b2srk"]
-[ext_resource type="Texture2D" uid="uid://b6dv4fxsiynsb" path="res://assets/BasketPatternWall.jpeg" id="3_rh6hw"]
+[ext_resource type="Texture2D" uid="uid://ia1oglemkhn5" path="res://assets/Wall.png" id="2_yeenr"]
 [ext_resource type="Texture2D" uid="uid://d2tcr4g5xkkkq" path="res://assets/pexels-photo-301717.jpeg" id="3_voj3y"]
 [ext_resource type="PackedScene" uid="uid://cwt44x3500kko" path="res://vegetable_factory.tscn" id="4_0e48k"]
 [ext_resource type="Texture2D" uid="uid://6vrqpoxfo5er" path="res://assets/Carrot.png" id="4_d7qv8"]
@@ -17,12 +17,13 @@ size = Vector2(572, 20)
 
 [node name="Main" type="Node2D"]
 process_mode = 1
+position = Vector2(-1, 0)
 script = ExtResource("1_b2srk")
 
 [node name="Playfield" type="Node2D" parent="."]
 
 [node name="Floor" type="Node2D" parent="Playfield"]
-position = Vector2(-67, 312)
+position = Vector2(-29, 335)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Floor"]
 position = Vector2(558, 570)
@@ -33,10 +34,10 @@ shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Floor/StaticBody2D"]
 z_index = 2
-position = Vector2(3, 1)
+position = Vector2(28, -30)
 rotation = 1.5708
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_rh6hw")
+scale = Vector2(2, 2)
+texture = ExtResource("2_yeenr")
 
 [node name="Wall1" type="Node2D" parent="Playfield"]
 position = Vector2(577, -148)
@@ -51,10 +52,10 @@ shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
 z_index = 2
-position = Vector2(44.9165, 15.4692)
+position = Vector2(-80, -15)
 rotation = 1.5708
-scale = Vector2(0.4, 0.39)
-texture = ExtResource("3_rh6hw")
+scale = Vector2(2, 2)
+texture = ExtResource("2_yeenr")
 
 [node name="Wall2" type="Node2D" parent="Playfield"]
 position = Vector2(1173, -172)
@@ -69,10 +70,10 @@ shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
 z_index = 2
-position = Vector2(1.00207, -5.00201)
-rotation = 4.71239
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_rh6hw")
+position = Vector2(-55.9998, 23.9999)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_yeenr")
 
 [node name="OutOfBounds" type="Node2D" parent="Playfield"]
 position = Vector2(320, -25)
