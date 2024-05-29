@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cytqquvraotjb"]
+[gd_scene load_steps=6 format=3 uid="uid://cytqquvraotjb"]
 
 [ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_u5ksx"]
 [ext_resource type="Script" path="res://garlic.gd" id="2_qyvmg"]
@@ -7,6 +7,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c1dha"]
 radius = 6.0
 height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cde4r"]
+size = Vector2(2, 6)
 
 [node name="Garlic" instance=ExtResource("1_u5ksx")]
 script = ExtResource("2_qyvmg")
@@ -18,3 +21,7 @@ texture = ExtResource("3_bq55u")
 position = Vector2(0, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_c1dha")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_cde4r")

@@ -9,15 +9,24 @@ func on_merge(event):
 	merge_event = event
 
 func _ready():
+	continuous_cd = 2
 	contact_monitor = true
 	max_contacts_reported = 1
-	$CollisionShape2D.set_scale(Vector2(modify_scale(target_scale), modify_scale(target_scale)))
+	scale_nodes()
+
+func scale_nodes():
+	scale_node($Sprite2D)
+	scale_node($CollisionShape2D)
+	if (get_node_or_null("CollisionShape2D2")):
+		scale_node($CollisionShape2D2)
 	
+func scale_node(node):
+	var scale = Vector2(modify_scale(target_scale), modify_scale(target_scale))
+	node.set_scale(scale)
+	node.position *= scale
+
 func modify_scale(multiplicand):
 	return multiplicand * _get_scale_modifier()
-
-func _process(delta):
-	set_scale(Vector2(modify_scale(target_scale),modify_scale(target_scale)))
 
 func get_species():
 	return species

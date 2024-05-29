@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://carrot.gd" id="2_lwyvx"]
 [ext_resource type="Texture2D" uid="uid://6vrqpoxfo5er" path="res://assets/Carrot.png" id="3_yonvj"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hfsyl"]
-radius = 2.15542
+[sub_resource type="CircleShape2D" id="CircleShape2D_fawui"]
+radius = 2.23607
 
 [node name="Carrot" instance=ExtResource("1_n2hjw")]
 scale = Vector2(2, 2)
@@ -15,6 +15,11 @@ script = ExtResource("2_lwyvx")
 texture = ExtResource("3_yonvj")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(1, 0)
+position = Vector2(9, -8.5)
 rotation = 0.733038
-shape = SubResource("CapsuleShape2D_hfsyl")
+shape = SubResource("CircleShape2D_fawui")
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(0.5, 1)
+scale = Vector2(0.90625, 0.9375)
+polygon = PackedVector2Array(-3.86207, -1.06667, -10.4828, 11.2, 0, 4.26667, 5.51724, -3.73333, 7.72414, -9.06667, 1.65517, -6.4)
