@@ -1,7 +1,8 @@
 # cropdrop
-A simple merge game
 
-Players connect like vegetables to upgrade them 
+A simple merge game.
+
+Players connect like vegetables to upgrade them.
 
 Set 1: 
 Garlic
