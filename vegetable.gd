@@ -12,18 +12,35 @@ func _ready():
 	continuous_cd = 2
 	contact_monitor = true
 	max_contacts_reported = 1
-	scale_nodes()
+#	scale_nodes()
 
 func scale_nodes():
 	scale_node($Sprite2D)
 	scale_node($CollisionShape2D)
 	if (get_node_or_null("CollisionShape2D2")):
 		scale_node($CollisionShape2D2)
-	
+
+func get_ratio():
+	return Vector2(modify_scale(target_scale), modify_scale(target_scale))
+
 func scale_node(node):
-	var scale = Vector2(modify_scale(target_scale), modify_scale(target_scale))
-	node.set_scale(scale)
-	node.position *= scale
+	node.position *= get_ratio()
+#	if "shape" in node:
+#		scale_shape(node.shape) 
+#	else:
+	if not "shape" in node:
+		node.set_scale(get_ratio())
+
+func scale_shape(shape):
+	if "extents" in shape:
+		shape.extents = get_ratio()
+	if "radius" in shape:
+		shape.radius = get_ratio().x
+	if "height" in shape:
+		shape.height *= get_ratio().x
+	if "length" in shape:
+		shape.length *= get_ratio().x
+	print(shape)
 
 func modify_scale(multiplicand):
 	return multiplicand * _get_scale_modifier()

@@ -5,14 +5,15 @@
 [ext_resource type="Script" path="res://onion.gd" id="2_ykjqc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kila0"]
-radius = 8.0
-height = 22.0
+radius = 38.0
+height = 110.0
 
 [node name="Onion" instance=ExtResource("1_hlu0b")]
 script = ExtResource("2_ykjqc")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, 1.13687e-13)
+scale = Vector2(5, 5)
 texture = ExtResource("2_75s07")
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -22,4 +23,4 @@ shape = SubResource("CapsuleShape2D_kila0")
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="." index="2"]
 position = Vector2(0, -1.22108e-15)
 scale = Vector2(0.90625, 0.9375)
-polygon = PackedVector2Array(3.31034, -8.53333, -3.31034, -7.46667, 0, -12.8, 2.2069, -12.8)
+polygon = PackedVector2Array(18.7586, -40.5333, -17.6552, -39.4667, 0, -64, 8.82759, -65.0667)
