@@ -9,12 +9,16 @@ radius = 4.31084
 height = 28.3958
 
 [node name="Cucumber" instance=ExtResource("1_q38o2")]
+position = Vector2(-7.62939e-06, 3)
 script = ExtResource("2_0sm2p")
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(-1.99999, 4)
+scale = Vector2(5, 5.177)
 texture = ExtResource("3_sp3o7")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(3, 0)
+position = Vector2(6.00001, 6)
 rotation = 0.839503
+scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_hfsyl")

@@ -11,10 +11,12 @@ height = 26.0
 [node name="Broccoli" instance=ExtResource("1_4jsuv")]
 script = ExtResource("2_7uyv8")
 
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(2, 0)
-rotation = -0.851721
-shape = SubResource("CapsuleShape2D_i5sb7")
-
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(5, 5.177)
 texture = ExtResource("3_ocylv")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(7, -3)
+rotation = -0.851721
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_i5sb7")
