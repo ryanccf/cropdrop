@@ -12,6 +12,8 @@ extends Node2D
 @export var pumpkin_scene: PackedScene = preload("res://pumpkin.tscn")
 @export var squash_scene: PackedScene = preload("res://squash.tscn")
 
+@export var sparkle_scene: PackedScene = preload("res://sparkle.tscn")
+
 var rng = RandomNumberGenerator.new()
 
 var vegetable_size=2
@@ -44,7 +46,13 @@ func set_indicators():
 
 func spawn(spawn_global_position):
 	spawn_vegetable(cycle_vegetable_queue(), Vector2(spawn_global_position.x, 0))
+	spawn_sparkle(Vector2(spawn_global_position.x, 0))
 	set_indicators()
+
+func spawn_sparkle(spawn_global_position):
+	var instance = sparkle_scene.instantiate()
+	instance.global_position = spawn_global_position
+	add_child(instance)
 
 func spawn_vegetable(vegetable_index, spawn_global_position):
 	var instance = vegetable_scenes[vegetable_index].instantiate()
