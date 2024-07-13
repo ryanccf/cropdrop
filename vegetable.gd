@@ -57,6 +57,6 @@ func get_texture():
 func _on_body_entered(body):
 	if(not is_queued_for_deletion()):
 		if(body.has_method("get_species") and not body.is_queued_for_deletion() and species == body.get_species()):
-				body.queue_free()
-				queue_free()
-				merge_event.call((global_position+body.global_position)/2)
+			body.queue_free()
+			queue_free()
+			merge_event.call((global_position+body.global_position)/2)

@@ -14,6 +14,8 @@ extends Node2D
 
 @export var sparkle_scene: PackedScene = preload("res://sparkle.tscn")
 
+const VEGETABLE_SPAWN_HEIGHT = 25
+
 var rng = RandomNumberGenerator.new()
 
 var vegetable_size=2
@@ -52,11 +54,13 @@ func spawn(spawn_global_position):
 func spawn_sparkle(spawn_global_position):
 	var instance = sparkle_scene.instantiate()
 	instance.global_position = spawn_global_position
+	instance.position.y += VEGETABLE_SPAWN_HEIGHT
 	add_child(instance)
 
 func spawn_vegetable(vegetable_index, spawn_global_position):
 	var instance = vegetable_scenes[vegetable_index].instantiate()
 	instance.global_position = spawn_global_position
+	instance.position.y += VEGETABLE_SPAWN_HEIGHT
 	instance.on_merge(_bind_spawn_vegetable(_loop_index(vegetable_index+1)))
 	check_win(vegetable_index)
 	add_child(instance)

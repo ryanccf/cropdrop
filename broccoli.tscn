@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnqhrqi4wptjc"]
+[gd_scene load_steps=8 format=3 uid="uid://bnqhrqi4wptjc"]
 
 [ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_4jsuv"]
 [ext_resource type="Script" path="res://broccoli.gd" id="2_7uyv8"]
@@ -7,6 +7,17 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i5sb7"]
 radius = 9.31277
 height = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5rw31"]
+radius = 6.56049
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32ohl"]
+radius = 1.24187
+height = 5.94627
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvx7k"]
+radius = 2.40825
+height = 9.05097
 
 [node name="Broccoli" instance=ExtResource("1_4jsuv")]
 script = ExtResource("2_7uyv8")
@@ -20,3 +31,27 @@ position = Vector2(7, -3)
 rotation = -0.851721
 scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_i5sb7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+process_mode = 1
+position = Vector2(27, -24)
+rotation = -0.851721
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_5rw31")
+debug_color = Color(0.631373, 0.921569, 1, 0.145098)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." index="3"]
+process_mode = 1
+position = Vector2(-35, 49)
+rotation = -0.745256
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_32ohl")
+debug_color = Color(0.631373, 0.921569, 1, 0.145098)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="4"]
+process_mode = 1
+position = Vector2(-28, 32)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_qvx7k")
+debug_color = Color(0.631373, 0.921569, 1, 0.145098)

@@ -22,6 +22,10 @@ window/size/viewport_height=900
 window/stretch/mode="viewport"
 window/handheld/orientation=1
 
+[physics]
+
+2d/physics_engine="Box2D"
+
 [rendering]
 
 renderer/rendering_method="mobile"

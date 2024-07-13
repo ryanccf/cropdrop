@@ -63,10 +63,10 @@ _data = {
 }
 
 [node name="Sparkle" type="Node2D"]
+scale = Vector2(5, 5)
 script = ExtResource("1_2emux")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = -2.33176
 texture = ExtResource("2_ofp6y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
