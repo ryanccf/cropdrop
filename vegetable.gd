@@ -54,7 +54,17 @@ func _get_scale_modifier():
 func get_texture():
 	return $Sprite2D.texture
 
+# attempt #1 to merge
+func _physics_process(delta):
+	var bodies = get_colliding_bodies()
+	for body in bodies:
+		merge_bodies(body)
+
+# attempt #2 to merge
 func _on_body_entered(body):
+	merge_bodies(body)
+
+func merge_bodies(body):
 	if(not is_queued_for_deletion()):
 		if(body.has_method("get_species") and not body.is_queued_for_deletion() and species == body.get_species()):
 			body.queue_free()
