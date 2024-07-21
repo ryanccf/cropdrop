@@ -63,6 +63,7 @@ _data = {
 }
 
 [node name="Sparkle" type="Node2D"]
+top_level = true
 scale = Vector2(5, 5)
 script = ExtResource("1_2emux")
 

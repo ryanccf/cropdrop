@@ -64,6 +64,7 @@ func spawn_vegetable(vegetable_index, spawn_global_position):
 	instance.on_merge(_bind_spawn_vegetable(_loop_index(vegetable_index+1)))
 	check_win(vegetable_index)
 	add_child(instance)
+	spawn_sparkle(spawn_global_position)
 	
 func check_win(vegetable_index):
 	if vegetable_index + 2 > vegetable_scenes.size():
