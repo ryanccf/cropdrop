@@ -142,3 +142,13 @@ autowrap_mode = 0
 [node name="VegetableChart" type="Node2D" parent="VegetableFactory"]
 position = Vector2(13, 16)
 script = ExtResource("6_61vt5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VegetableFactory"]
+
+[node name="ComboTimer" type="Timer" parent="VegetableFactory"]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="spawned_vegetable" from="VegetableFactory" to="." method="_on_vegetable_factory_spawned_vegetable"]
+[connection signal="timeout" from="VegetableFactory/ComboTimer" to="VegetableFactory" method="_on_combo_timer_timeout"]

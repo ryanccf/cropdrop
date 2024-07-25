@@ -1,5 +1,7 @@
 extends Node2D
 
+var spawned_sound = "res://assets/Audio/C5_01.wav"
+
 func _return_to_menu():
 	get_tree().change_scene_to_file("res://main_menu.tscn")
 	
@@ -10,3 +12,9 @@ func _process(delta):
 			if(body.linear_velocity.snapped(Vector2(0.01, 0.01)) == Vector2.ZERO):
 				_return_to_menu()
 		)
+
+func _on_vegetable_factory_spawned_vegetable():
+	var the_sound = load(spawned_sound)
+	if the_sound is AudioStream:
+		$AudioStreamPlayer.stream = the_sound
+		$AudioStreamPlayer.play()

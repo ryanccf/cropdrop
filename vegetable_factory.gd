@@ -22,7 +22,17 @@ var vegetable_size=2
 var vegetable_scenes = [garlic_scene, potato_scene, tomato_scene, onion_scene, pepper_scene, carrot_scene, cucumber_scene, squash_scene, broccoli_scene, cabbage_scene, cauliflower_scene, pumpkin_scene]
 var vegetable_queue = []
 var start_time = 0
+var merged_sound_1 = "res://assets/Audio/D5_01.wav"
+var merged_sound_2 = "res://assets/Audio/E5_01.wav"
+var merged_sound_3 = "res://assets/Audio/F5_01.wav"
+var merged_sound_4 = "res://assets/Audio/G5_01.wav"
 
+
+var combo = 0
+var just_spawned_vegetable = false
+
+signal spawned_vegetable
+signal merged_vegetable
 
 func _ready():
 	$VegetableChart.set_scenes(vegetable_scenes)
@@ -33,7 +43,6 @@ func _ready():
 
 func _process(delta):
 	pass
-	
 
 func _unhandled_input(event):
 	if event.is_echo():
@@ -62,10 +71,11 @@ func spawn_vegetable(vegetable_index, spawn_global_position):
 	instance.global_position = spawn_global_position
 	instance.position.y += VEGETABLE_SPAWN_HEIGHT
 	instance.on_merge(_bind_spawn_vegetable(_loop_index(vegetable_index+1)))
+	spawned_vegetable.emit()
 	check_win(vegetable_index)
 	add_child(instance)
 	spawn_sparkle(spawn_global_position)
-	
+
 func check_win(vegetable_index):
 	if vegetable_index + 2 > vegetable_scenes.size():
 		show_win_label()
@@ -87,6 +97,10 @@ func _loop_index(next_index):
 
 func _bind_spawn_vegetable(vegetable_index):
 	return func (spawn_global_position):
+		$ComboTimer.start()
+		combo += 1
+		play_merge_sound()
+		print(combo)
 		spawn_vegetable(vegetable_index, spawn_global_position)
 
 func cycle_vegetable_queue():
@@ -110,3 +124,23 @@ func choose_vegetable():
 	if range(91,100).has(rando):
 		chosen_vegetable = 4
 	return chosen_vegetable
+
+func play_merge_sound():
+	var the_sound
+	match combo:
+		1:
+			the_sound = load(merged_sound_1)
+		2:
+			the_sound = load(merged_sound_2)
+		3:
+			the_sound = load(merged_sound_3)
+		4:
+			the_sound = load(merged_sound_4)
+	if the_sound is AudioStream:
+		$AudioStreamPlayer.stream = the_sound
+		$AudioStreamPlayer.play()
+
+
+func _on_combo_timer_timeout():
+	just_spawned_vegetable = false
+	combo = 0

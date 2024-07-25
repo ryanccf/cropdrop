@@ -55,7 +55,7 @@ func get_texture():
 	return $Sprite2D.texture
 
 # attempt #1 to merge
-func _physics_process(delta):
+func _physics_process(_delta):
 	var bodies = get_colliding_bodies()
 	for body in bodies:
 		merge_bodies(body)
