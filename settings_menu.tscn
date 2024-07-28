@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7sjfgkhenpv1"]
+[gd_scene load_steps=11 format=3 uid="uid://c7sjfgkhenpv1"]
 
 [ext_resource type="Script" path="res://settings_menu.gd" id="1_8jycr"]
 [ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="1_gynyq"]
 [ext_resource type="Texture2D" uid="uid://b4cb8qd88u0jf" path="res://assets/Kenney UI/shaded-dark/shadedDark35.png" id="3_h1p4l"]
+[ext_resource type="Texture2D" uid="uid://dsnfhe4nl0h0" path="res://assets/Kenney UI/shaded-dark/shadedDark13.png" id="3_hvb86"]
+[ext_resource type="Script" path="res://ToggleSFXMute.gd" id="3_vhtrn"]
 [ext_resource type="Texture2D" uid="uid://dafgx06ya6c3m" path="res://assets/Kenney UI/shaded-light/shadedLight35.png" id="4_hqjj7"]
+[ext_resource type="Texture2D" uid="uid://5yydbiprxxap" path="res://assets/Kenney UI/shaded-dark/shadedDark17.png" id="5_8p637"]
+[ext_resource type="Script" path="res://ToggleMusicMute.gd" id="6_kc4vr"]
+
+[sub_resource type="Shortcut" id="Shortcut_fgmdk"]
+resource_name = "toggle_mute"
+
+[sub_resource type="Shortcut" id="Shortcut_1htnk"]
+resource_name = "toggle_mute"
 
 [node name="Settings Menu" type="Node2D"]
 process_mode = 2
@@ -38,10 +48,61 @@ theme = ExtResource("1_gynyq")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Settings"
 
+[node name="SoundButtons" type="Control" parent="Header"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SFXCheckButton" type="CheckButton" parent="Header/SoundButtons"]
+z_index = 1
+layout_mode = 1
+offset_left = 202.0
+offset_top = 200.0
+offset_right = 600.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+button_pressed = true
+action_mode = 0
+shortcut = SubResource("Shortcut_fgmdk")
+text = "Mute Sound Effects
+ "
+icon = ExtResource("3_hvb86")
+alignment = 1
+icon_alignment = 2
+script = ExtResource("3_vhtrn")
+
+[node name="CheckButton" type="CheckButton" parent="Header/SoundButtons"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 340.0
+offset_right = 600.0
+offset_bottom = 420.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+button_pressed = true
+action_mode = 0
+shortcut = SubResource("Shortcut_1htnk")
+text = "Mute Music"
+icon = ExtResource("5_8p637")
+alignment = 1
+icon_alignment = 2
+script = ExtResource("6_kc4vr")
+
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("3_h1p4l")
 texture_pressed = ExtResource("4_hqjj7")
 
+[connection signal="toggled" from="Header/SoundButtons/SFXCheckButton" to="Header/SoundButtons/SFXCheckButton" method="_on_toggled"]
+[connection signal="toggled" from="Header/SoundButtons/CheckButton" to="Header/SoundButtons/CheckButton" method="_on_toggled"]
 [connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]

@@ -15,7 +15,7 @@ func _process(delta):
 
 func _on_vegetable_factory_spawned_vegetable():
 	var the_sound = load(spawned_sound)
-	if the_sound is AudioStream:
+	if the_sound is AudioStream and Settings.is_muted() == false:
 		$AudioStreamPlayer.stream = the_sound
 		$AudioStreamPlayer.play()
 

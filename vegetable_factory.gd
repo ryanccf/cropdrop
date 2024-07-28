@@ -98,7 +98,6 @@ func _bind_spawn_vegetable(vegetable_index):
 		$ComboTimer.start()
 		combo += 1
 		play_merge_sound()
-		print(combo)
 		spawn_vegetable(vegetable_index, spawn_global_position)
 
 func cycle_vegetable_queue():
@@ -124,13 +123,14 @@ func choose_vegetable():
 	return chosen_vegetable
 
 func play_merge_sound():
-	var the_sound
-	if combo < notes.size():
-		$AudioStreamPlayer.pitch_scale = notes[combo]
-	the_sound = load(merged_sound)
-	if the_sound is AudioStream:
-		$AudioStreamPlayer.stream = the_sound
-		$AudioStreamPlayer.play()
+	if Settings.is_muted() == false:
+		var the_sound
+		if combo < notes.size():
+			$AudioStreamPlayer.pitch_scale = notes[combo]
+		the_sound = load(merged_sound)
+		if the_sound is AudioStream:
+			$AudioStreamPlayer.stream = the_sound
+			$AudioStreamPlayer.play()
 
 func _on_combo_timer_timeout():
 	just_spawned_vegetable = false
