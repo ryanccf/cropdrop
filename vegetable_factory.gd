@@ -26,8 +26,6 @@ var vegetable_scenes = [garlic_scene, potato_scene, tomato_scene, onion_scene, p
 var vegetable_queue = []
 var start_time = 0
 var merged_sound = "res://assets/Audio/impactSoft_heavy_000.ogg"
-
-
 var combo = 0
 var just_spawned_vegetable = false
 

@@ -7,10 +7,14 @@ func _unhandled_key_input(event):
 func _process(delta):
 	pass
 
-func _input(event):
-	if event is InputEventMouseButton:
-		start_game()
-
 func start_game():
-	if not $StartTime.get_time_left() > 0:
-		get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://main.tscn")
+
+func _on_button_button_down():
+	start_game()
+
+
+func _on_texture_button_button_up():
+	var settings_menu = load("res://settings_menu.tscn").instantiate()
+	settings_menu.z_index = 10
+	add_child(settings_menu)

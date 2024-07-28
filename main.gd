@@ -18,3 +18,8 @@ func _on_vegetable_factory_spawned_vegetable():
 	if the_sound is AudioStream:
 		$AudioStreamPlayer.stream = the_sound
 		$AudioStreamPlayer.play()
+
+func _on_menu_button_button_up():
+	var settings_menu = load("res://settings_menu.tscn").instantiate()
+	settings_menu.z_index = 10
+	add_child(settings_menu)

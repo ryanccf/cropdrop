@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7sjfgkhenpv1"]
+
+[ext_resource type="Script" path="res://settings_menu.gd" id="1_8jycr"]
+[ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="1_gynyq"]
+[ext_resource type="Texture2D" uid="uid://b4cb8qd88u0jf" path="res://assets/Kenney UI/shaded-dark/shadedDark35.png" id="3_h1p4l"]
+[ext_resource type="Texture2D" uid="uid://dafgx06ya6c3m" path="res://assets/Kenney UI/shaded-light/shadedLight35.png" id="4_hqjj7"]
+
+[node name="Settings Menu" type="Node2D"]
+process_mode = 2
+script = ExtResource("1_8jycr")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.700605, 0.793208, 0.912445, 1)
+polygon = PackedVector2Array(-15, -19, 614, -16, 619, 912, -13, 922)
+
+[node name="Header" type="Control" parent="."]
+custom_minimum_size = Vector2(600, 900)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="RichTextLabel" parent="Header"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 46.0
+offset_right = 59.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme = ExtResource("1_gynyq")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Settings"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_h1p4l")
+texture_pressed = ExtResource("4_hqjj7")
+
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
