@@ -1,6 +1,6 @@
 extends Node2D
 
-var spawned_sound = "res://assets/Audio/C5_01.wav"
+var spawned_sound = "res://assets/Audio/impactSoft_heavy_000.ogg"
 
 func _return_to_menu():
 	get_tree().change_scene_to_file("res://main_menu.tscn")

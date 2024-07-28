@@ -14,6 +14,9 @@ extends Node2D
 
 @export var sparkle_scene: PackedScene = preload("res://sparkle.tscn")
 
+#G Major
+var notes = [1.05946, 1.12246, 1.25992, 1.33484, 1.49831, 1.58457, 2.0, 2.11892, 2.24492, 2.51984, 2.66968, 2.99662, 3.16914, 4.0, 4.23784, 4.48984, 5.03968, 5.33936, 5.99324, 6.33828, 8.0, 8.47568, 8.97968, 10.07936, 10.67872, 11.98648, 12.67656]
+
 const VEGETABLE_SPAWN_HEIGHT = 25
 
 var rng = RandomNumberGenerator.new()
@@ -22,10 +25,7 @@ var vegetable_size=2
 var vegetable_scenes = [garlic_scene, potato_scene, tomato_scene, onion_scene, pepper_scene, carrot_scene, cucumber_scene, squash_scene, broccoli_scene, cabbage_scene, cauliflower_scene, pumpkin_scene]
 var vegetable_queue = []
 var start_time = 0
-var merged_sound_1 = "res://assets/Audio/D5_01.wav"
-var merged_sound_2 = "res://assets/Audio/E5_01.wav"
-var merged_sound_3 = "res://assets/Audio/F5_01.wav"
-var merged_sound_4 = "res://assets/Audio/G5_01.wav"
+var merged_sound = "res://assets/Audio/impactSoft_heavy_000.ogg"
 
 
 var combo = 0
@@ -49,13 +49,14 @@ func _unhandled_input(event):
 		return
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			spawn(get_global_mouse_position())
+			drop(get_global_mouse_position())
 
 func set_indicators():
 	$VegetableIndicatorB.set_texture(vegetable_scenes[vegetable_queue[-0]].instantiate().get_texture())
 	$VegetableIndicatorA.set_texture(vegetable_scenes[vegetable_queue[-1]].instantiate().get_texture())
 
-func spawn(spawn_global_position):
+func drop(spawn_global_position):
+	spawned_vegetable.emit()
 	spawn_vegetable(cycle_vegetable_queue(), Vector2(spawn_global_position.x, 0))
 	spawn_sparkle(Vector2(spawn_global_position.x, 0))
 	set_indicators()
@@ -71,7 +72,6 @@ func spawn_vegetable(vegetable_index, spawn_global_position):
 	instance.global_position = spawn_global_position
 	instance.position.y += VEGETABLE_SPAWN_HEIGHT
 	instance.on_merge(_bind_spawn_vegetable(_loop_index(vegetable_index+1)))
-	spawned_vegetable.emit()
 	check_win(vegetable_index)
 	add_child(instance)
 	spawn_sparkle(spawn_global_position)
@@ -127,19 +127,12 @@ func choose_vegetable():
 
 func play_merge_sound():
 	var the_sound
-	match combo:
-		1:
-			the_sound = load(merged_sound_1)
-		2:
-			the_sound = load(merged_sound_2)
-		3:
-			the_sound = load(merged_sound_3)
-		4:
-			the_sound = load(merged_sound_4)
+	if combo < notes.size():
+		$AudioStreamPlayer.pitch_scale = notes[combo]
+	the_sound = load(merged_sound)
 	if the_sound is AudioStream:
 		$AudioStreamPlayer.stream = the_sound
 		$AudioStreamPlayer.play()
-
 
 func _on_combo_timer_timeout():
 	just_spawned_vegetable = false

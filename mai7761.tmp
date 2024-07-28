@@ -99,6 +99,19 @@ scale = Vector2(4, 4)
 texture = ExtResource("4_gqcq7")
 
 [node name="VegetableFactory" parent="." instance=ExtResource("4_0e48k")]
+broccoli_scene = null
+cabbage_scene = null
+carrot_scene = null
+cauliflower_scene = null
+cucumber_scene = null
+tomato_scene = null
+garlic_scene = null
+onion_scene = null
+pepper_scene = null
+potato_scene = null
+pumpkin_scene = null
+squash_scene = null
+sparkle_scene = null
 
 [node name="VegetableIndicatorA" type="Sprite2D" parent="VegetableFactory"]
 z_index = 10
@@ -146,7 +159,7 @@ script = ExtResource("6_61vt5")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VegetableFactory"]
 
 [node name="ComboTimer" type="Timer" parent="VegetableFactory"]
-wait_time = 1.5
+wait_time = 2.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
