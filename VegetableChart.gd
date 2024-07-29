@@ -10,10 +10,10 @@ func set_scenes(vegetable_scenes):
 		index += 1
 		)
 
-func display_item(index, texture, scale_modifier):
+func display_item(item_index, texture, scale_modifier):
 		var indicator = Sprite2D.new()
 		indicator.set_texture(texture)
 		indicator.set_z_index(10)
 		add_child(indicator)
-		indicator.set_position(Vector2(position.x, position.y + (42 * index)))
+		indicator.set_position(Vector2(position.x, position.y + (42 * item_index)))
 		indicator.set_scale(indicator.scale * scale_modifier)

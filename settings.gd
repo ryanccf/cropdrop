@@ -23,10 +23,6 @@ func load_settings():
 func _ready():
 	load_settings()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func is_muted():
 	return muted
 

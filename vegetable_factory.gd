@@ -39,9 +39,6 @@ func _ready():
 	set_indicators()
 	start_time = Time.get_unix_time_from_system()
 
-func _process(delta):
-	pass
-
 func _unhandled_input(event):
 	if event.is_echo():
 		return
@@ -71,7 +68,7 @@ func spawn_vegetable(vegetable_index, spawn_global_position):
 	instance.position.y += VEGETABLE_SPAWN_HEIGHT
 	instance.on_merge(_bind_spawn_vegetable(_loop_index(vegetable_index+1)))
 	check_win(vegetable_index)
-	add_child(instance)
+	call_deferred("add_child", instance)
 	spawn_sparkle(spawn_global_position)
 
 func check_win(vegetable_index):

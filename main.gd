@@ -5,7 +5,7 @@ var spawned_sound = "res://assets/Audio/impactSoft_heavy_000.ogg"
 func _return_to_menu():
 	get_tree().change_scene_to_file("res://main_menu.tscn")
 	
-func _process(delta):
+func _process(_delta):
 	pass
 	$Playfield/OutOfBounds/Area2D.get_overlapping_bodies().map(func(body):
 		if(body.has_method("get_species") and not body.is_queued_for_deletion()):

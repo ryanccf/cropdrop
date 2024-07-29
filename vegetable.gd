@@ -3,13 +3,13 @@ extends RigidBody2D
 var species = "vegetable"
 var species_index = 0
 var target_scale = 5
-var merge_event = func(global_position):pass
+var merge_event = func(_global_position):pass
 
 func on_merge(event):
 	merge_event = event
 
 func _ready():
-	continuous_cd = 2
+	continuous_cd = CCD_MODE_CAST_SHAPE
 	contact_monitor = true
 	max_contacts_reported = 1
 #	scale_nodes()

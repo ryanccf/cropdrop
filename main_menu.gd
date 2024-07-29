@@ -4,9 +4,6 @@ func _unhandled_key_input(event):
 	if event.is_pressed():
 		start_game()
 
-func _process(delta):
-	pass
-
 func start_game():
 	get_tree().change_scene_to_file("res://main.tscn")
 
