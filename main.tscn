@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://8yrowhomjn3x"]
+[gd_scene load_steps=14 format=3 uid="uid://8yrowhomjn3x"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b2srk"]
 [ext_resource type="Texture2D" uid="uid://ia1oglemkhn5" path="res://assets/Wall.png" id="2_yeenr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://VegetableChart.gd" id="6_61vt5"]
 [ext_resource type="Texture2D" uid="uid://br7xuuewyxexx" path="res://assets/Kenney UI/shaded-dark/shadedDark31.png" id="9_574bm"]
 [ext_resource type="Texture2D" uid="uid://cwewp8sbtf7jk" path="res://assets/Kenney UI/shaded-light/shadedLight31.png" id="10_tntj3"]
+[ext_resource type="AudioStream" uid="uid://ci8whvnnk3xm6" path="res://assets/Audio/Podington_Bear_-_01_-_Happiness_Is.ogg" id="11_cvruj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6kcq"]
 size = Vector2(1461.25, 123.999)
@@ -165,6 +166,10 @@ texture_pressed = ExtResource("10_tntj3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_cvruj")
+
 [connection signal="spawned_vegetable" from="VegetableFactory" to="." method="_on_vegetable_factory_spawned_vegetable"]
 [connection signal="timeout" from="VegetableFactory/ComboTimer" to="VegetableFactory" method="_on_combo_timer_timeout"]
 [connection signal="button_up" from="MenuButton" to="." method="_on_menu_button_button_up"]
+[connection signal="finished" from="MusicStreamPlayer" to="." method="_on_music_stream_player_finished"]

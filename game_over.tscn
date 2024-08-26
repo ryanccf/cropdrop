@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgknqu13xhq3e"]
+
+[ext_resource type="Script" path="res://GameOver.gd" id="1_xmms3"]
+[ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="2_5fnao"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_xmms3")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.827451, 1, 0.709804, 1)
+polygon = PackedVector2Array(-15, -24, 616, -14, 611, 915, -27, 915)
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 640.0
+offset_right = 601.0
+offset_bottom = 899.0
+
+[node name="ColorRect" type="ColorRect" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -92.0
+offset_right = 246.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="Buttons/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_5fnao")
+theme_override_font_sizes/font_size = 11
+text = "Return to menu"
+
+[node name="CenterContainer2" type="CenterContainer" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="Buttons/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("2_5fnao")
+text = "DROP MORE CROPS RIGHT AWAY!"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(200, 120)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 220.0
+offset_top = 28.0
+offset_right = 420.0
+offset_bottom = 148.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_5fnao")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Great Job!"
+
+[node name="GameplayScreenshot" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(300, 600)
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 420.0
+offset_bottom = 680.0
+scale = Vector2(0.6, 0.6)
+
+[connection signal="button_up" from="Buttons/VBoxContainer/CenterContainer/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
+[connection signal="button_up" from="Buttons/VBoxContainer/CenterContainer2/RestartButton" to="." method="_on_restart_button_button_up"]

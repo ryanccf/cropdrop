@@ -2,3 +2,8 @@
 
 [resource]
 default_font_size = 30
+LinkButton/colors/font_color = Color(0.862745, 0.345098, 0.87451, 1)
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10

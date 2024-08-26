@@ -13,11 +13,12 @@ config_version=5
 config/name="cropdrop"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://assets/Pumpkin.png"
 
 [autoload]
 
 Settings="*res://settings.tscn"
+Screenshots="*res://screenshots.gd"
 
 [display]
 
@@ -25,6 +26,10 @@ window/size/viewport_width=600
 window/size/viewport_height=900
 window/stretch/mode="viewport"
 window/handheld/orientation=1
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [physics]
 

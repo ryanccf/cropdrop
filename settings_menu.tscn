@@ -88,6 +88,68 @@ icon = ExtResource("3_hvb86")
 icon_alignment = 2
 script = ExtResource("3_vhtrn")
 
+[node name="MenuButton" type="Button" parent="Header"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 819.0
+offset_right = 411.0
+offset_bottom = 877.0
+text = "Return to Menu"
+
+[node name="Popup" type="Popup" parent="Header"]
+mode = 3
+position = Vector2i(50, 500)
+size = Vector2i(520, 264)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Header/Popup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
+[node name="MarginContainer" type="MarginContainer" parent="Header/Popup/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("1_gynyq")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Header/Popup/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 140)
+layout_mode = 2
+theme = ExtResource("1_gynyq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Header/Popup/VBoxContainer/MarginContainer/CenterContainer2"]
+clip_contents = false
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme = ExtResource("1_gynyq")
+text = "Really return to menu?"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="CenterContainer" type="CenterContainer" parent="Header/Popup/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/Popup/VBoxContainer/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Control" type="Control" parent="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Return to Menu"
+
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -96,4 +158,7 @@ texture_pressed = ExtResource("4_hqjj7")
 
 [connection signal="toggled" from="Header/SoundButtons/MusicCheckButton" to="Header/SoundButtons/MusicCheckButton" method="_on_toggled"]
 [connection signal="toggled" from="Header/SoundButtons/SFXCheckButton2" to="Header/SoundButtons/SFXCheckButton2" method="_on_toggled"]
+[connection signal="button_down" from="Header/MenuButton" to="." method="_on_menu_button_button_down"]
+[connection signal="button_up" from="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="button_up" from="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_button_up"]
 [connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
