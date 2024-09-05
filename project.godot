@@ -33,7 +33,7 @@ import/fbx/enabled=false
 
 [physics]
 
-2d/physics_engine="Box2D"
+2d/physics_engine="GodotPhysics2D"
 
 [rendering]
 

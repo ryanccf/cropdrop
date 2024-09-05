@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://8yrowhomjn3x"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_b2srk"]
+[ext_resource type="Texture2D" uid="uid://cyc8snsiuedlw" path="res://assets/floor.png" id="2_mn7mr"]
+[ext_resource type="PackedScene" uid="uid://cwt44x3500kko" path="res://vegetable_factory.tscn" id="4_0e48k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6kcq"]
+size = Vector2(1514.5, 98)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_b2srk")
+
+[node name="Playfield" type="Node2D" parent="."]
+
+[node name="Floor" type="Node2D" parent="Playfield"]
+position = Vector2(-67, 312)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Floor"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Floor/StaticBody2D"]
+position = Vector2(2.75, 2)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Floor/StaticBody2D"]
+position = Vector2(2, 0)
+texture = ExtResource("2_mn7mr")
+
+[node name="Wall1" type="Node2D" parent="Playfield"]
+position = Vector2(577, -148)
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Wall1"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Wall1/StaticBody2D"]
+position = Vector2(2.75, 2)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
+position = Vector2(2, 0)
+texture = ExtResource("2_mn7mr")
+
+[node name="Wall2" type="Node2D" parent="Playfield"]
+position = Vector2(1173, -172)
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Wall2"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Wall2/StaticBody2D"]
+position = Vector2(2.75, 2)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
+position = Vector2(2, 0)
+texture = ExtResource("2_mn7mr")
+
+[node name="VegetableFactory" parent="." instance=ExtResource("4_0e48k")]

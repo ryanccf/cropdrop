@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cllofdew55y4i"]
+
+[ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_hlu0b"]
+[ext_resource type="Texture2D" uid="uid://cx8imrt3duqsc" path="res://assets/Onion.png" id="2_75s07"]
+[ext_resource type="Script" path="res://onion.gd" id="2_ykjqc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kila0"]
+radius = 38.0
+height = 110.0
+
+[node name="Onion" instance=ExtResource("1_hlu0b")]
+script = ExtResource("2_ykjqc")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 1.13687e-13)
+scale = Vector2(5, 5)
+texture = ExtResource("2_75s07")
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kila0")
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(0, -1.22108e-15)
+scale = Vector2(0.90625, 0.9375)
+polygon = PackedVector2Array(18.7586, -40.5333, -17.6552, -39.4667, 0, -64, 8.82759, -65.0667)

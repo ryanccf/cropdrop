@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://beoc5vh60p04u"]
+
+[ext_resource type="Texture2D" uid="uid://dj8twf5o6w0rl" path="res://assets/Tomato.png" id="1_lvvjs"]
+[ext_resource type="Script" path="res://vegetable.gd" id="1_wy20c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ywfbb"]
+radius = 48.1664
+
+[node name="Vegetable" type="RigidBody2D"]
+process_mode = 3
+continuous_cd = 2
+max_contacts_reported = 20
+contact_monitor = true
+script = ExtResource("1_wy20c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1.13687e-13)
+scale = Vector2(0.90625, 0.9375)
+texture = ExtResource("1_lvvjs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+process_mode = 1
+shape = SubResource("CircleShape2D_ywfbb")
+debug_color = Color(0.631373, 0.921569, 1, 0.145098)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

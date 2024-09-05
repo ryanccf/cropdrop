@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://8yrowhomjn3x"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_b2srk"]
+[ext_resource type="Texture2D" uid="uid://ia1oglemkhn5" path="res://assets/Wall.png" id="2_yeenr"]
+[ext_resource type="Texture2D" uid="uid://d2tcr4g5xkkkq" path="res://assets/pexels-photo-301717.jpeg" id="3_voj3y"]
+[ext_resource type="PackedScene" uid="uid://cwt44x3500kko" path="res://vegetable_factory.tscn" id="4_0e48k"]
+[ext_resource type="Texture2D" uid="uid://6vrqpoxfo5er" path="res://assets/Carrot.png" id="4_d7qv8"]
+[ext_resource type="Texture2D" uid="uid://cib7srqfgmo2u" path="res://assets/buskettexture.png" id="4_gqcq7"]
+[ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="5_vpsxp"]
+[ext_resource type="Script" path="res://VegetableChart.gd" id="6_61vt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6kcq"]
+size = Vector2(1461.25, 123.999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykk47"]
+size = Vector2(572, 20)
+
+[node name="Main" type="Node2D"]
+process_mode = 1
+position = Vector2(-1, 0)
+script = ExtResource("1_b2srk")
+
+[node name="Playfield" type="Node2D" parent="."]
+
+[node name="Floor" type="Node2D" parent="Playfield"]
+position = Vector2(-29, 335)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Floor"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Floor/StaticBody2D"]
+position = Vector2(2.75, 2)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Floor/StaticBody2D"]
+z_index = 2
+position = Vector2(28, -30)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_yeenr")
+
+[node name="Wall1" type="Node2D" parent="Playfield"]
+position = Vector2(577, -148)
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Wall1"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Wall1/StaticBody2D"]
+position = Vector2(26.502, 12.9952)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
+z_index = 2
+position = Vector2(-80, -15)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_yeenr")
+
+[node name="Wall2" type="Node2D" parent="Playfield"]
+position = Vector2(1173, -172)
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Wall2"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Wall2/StaticBody2D"]
+position = Vector2(1.62595, -5.99969)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
+z_index = 2
+position = Vector2(-55.9998, 23.9999)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_yeenr")
+
+[node name="OutOfBounds" type="Node2D" parent="Playfield"]
+position = Vector2(320, -25)
+
+[node name="Area2D" type="Area2D" parent="Playfield/OutOfBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/OutOfBounds/Area2D"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_ykk47")
+
+[node name="Background" type="Node2D" parent="Playfield"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Background"]
+position = Vector2(298, 455)
+rotation = 1.5708
+scale = Vector2(1.56396, 1.7298)
+texture = ExtResource("3_voj3y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Playfield/Background"]
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(331, 417)
+scale = Vector2(4, 4)
+texture = ExtResource("4_gqcq7")
+
+[node name="VegetableFactory" parent="." instance=ExtResource("4_0e48k")]
+
+[node name="VegetableIndicatorA" type="Sprite2D" parent="VegetableFactory"]
+z_index = 10
+position = Vector2(527, 44)
+texture = ExtResource("4_d7qv8")
+
+[node name="VegetableIndicatorB" type="Sprite2D" parent="VegetableFactory"]
+z_index = 10
+position = Vector2(532, 16)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_d7qv8")
+
+[node name="WinLabel" type="RichTextLabel" parent="VegetableFactory"]
+process_mode = 3
+visible = false
+z_index = 10
+offset_left = 253.0
+offset_top = 63.0
+offset_right = 379.0
+offset_bottom = 105.0
+theme = ExtResource("5_vpsxp")
+text = "You Win!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="TimeLabel" type="RichTextLabel" parent="VegetableFactory"]
+process_mode = 3
+visible = false
+z_index = 10
+offset_left = 253.0
+offset_top = 124.0
+offset_right = 379.0
+offset_bottom = 166.0
+theme = ExtResource("5_vpsxp")
+text = "You Win!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VegetableChart" type="Node2D" parent="VegetableFactory"]
+position = Vector2(13, 16)
+script = ExtResource("6_61vt5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VegetableFactory"]
+
+[node name="ComboTimer" type="Timer" parent="VegetableFactory"]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="spawned_vegetable" from="VegetableFactory" to="." method="_on_vegetable_factory_spawned_vegetable"]
+[connection signal="timeout" from="VegetableFactory/ComboTimer" to="VegetableFactory" method="_on_combo_timer_timeout"]

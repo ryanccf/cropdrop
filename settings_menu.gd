@@ -22,3 +22,9 @@ func _on_confirm_button_button_up():
 
 func _on_back_button_button_up():
 	$Header/Popup.visible = false
+
+func _on_music_volume_slider_value_changed(new_volume):
+	Settings.set_music_volume(new_volume)
+
+func _on_sfx_volume_slider_value_changed(new_volume):
+	Settings.set_sfx_volume(new_volume)

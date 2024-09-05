@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://8yrowhomjn3x"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_b2srk"]
+[ext_resource type="Texture2D" uid="uid://cyc8snsiuedlw" path="res://assets/floor.png" id="2_mn7mr"]
+[ext_resource type="PackedScene" uid="uid://cwt44x3500kko" path="res://vegetable_factory.tscn" id="4_0e48k"]
+[ext_resource type="Texture2D" uid="uid://6vrqpoxfo5er" path="res://assets/Carrot.png" id="4_d7qv8"]
+[ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="5_vpsxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6kcq"]
+size = Vector2(1514.5, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykk47"]
+size = Vector2(572, 20)
+
+[node name="Main" type="Node2D"]
+position = Vector2(-28, 16)
+script = ExtResource("1_b2srk")
+
+[node name="Playfield" type="Node2D" parent="."]
+
+[node name="Floor" type="Node2D" parent="Playfield"]
+position = Vector2(-67, 312)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Floor"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Floor/StaticBody2D"]
+position = Vector2(2.75, 2)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Floor/StaticBody2D"]
+position = Vector2(2, 0)
+texture = ExtResource("2_mn7mr")
+
+[node name="Wall1" type="Node2D" parent="Playfield"]
+position = Vector2(577, -148)
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Wall1"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Wall1/StaticBody2D"]
+position = Vector2(2.75, 2)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
+position = Vector2(2, 0)
+texture = ExtResource("2_mn7mr")
+
+[node name="Wall2" type="Node2D" parent="Playfield"]
+position = Vector2(1173, -172)
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Wall2"]
+position = Vector2(558, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Wall2/StaticBody2D"]
+position = Vector2(2.75, 2)
+shape = SubResource("RectangleShape2D_c6kcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
+position = Vector2(2, 0)
+texture = ExtResource("2_mn7mr")
+
+[node name="OutOfBounds" type="Node2D" parent="Playfield"]
+position = Vector2(320, -25)
+
+[node name="Area2D" type="Area2D" parent="Playfield/OutOfBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/OutOfBounds/Area2D"]
+shape = SubResource("RectangleShape2D_ykk47")
+
+[node name="VegetableFactory" parent="." instance=ExtResource("4_0e48k")]
+
+[node name="VegetableIndicatorA" type="Sprite2D" parent="VegetableFactory"]
+position = Vector2(527, 44)
+texture = ExtResource("4_d7qv8")
+
+[node name="VegetableIndicatorB" type="Sprite2D" parent="VegetableFactory"]
+position = Vector2(532, 16)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_d7qv8")
+
+[node name="WinLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 253.0
+offset_top = 63.0
+offset_right = 379.0
+offset_bottom = 105.0
+theme = ExtResource("5_vpsxp")
+text = "You Win!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

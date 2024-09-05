@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://s0swsrcjfo2h"]
+
+[ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_n2hjw"]
+[ext_resource type="Script" path="res://carrot.gd" id="2_lwyvx"]
+[ext_resource type="Texture2D" uid="uid://6vrqpoxfo5er" path="res://assets/Carrot.png" id="3_yonvj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fawui"]
+radius = 11.4698
+
+[node name="Carrot" instance=ExtResource("1_n2hjw")]
+script = ExtResource("2_lwyvx")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(6, 6)
+texture = ExtResource("3_yonvj")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(55, -55)
+rotation = 0.733038
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_fawui")
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(0.5, 1)
+polygon = PackedVector2Array(-33.5, 9, -58.5, 44, -64.5, 70, -41.5, 65, 3.5, 26, 11.5, 10, 37.5, -17, 42.5, -48, 6.5, -41)

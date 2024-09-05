@@ -41,14 +41,16 @@ func _ready():
 	play_song(song_list)
 
 func _process(_delta):
-	check_music_mute()
+	check_music()
 	$Playfield/OutOfBounds/Area2D.get_overlapping_bodies().map(func(body):
 		if(body.has_method("get_species") and not body.is_queued_for_deletion()):
 			if(body.linear_velocity.snapped(Vector2(0.01, 0.01)) == Vector2.ZERO):
 				game_over_screen()
 		)
 
-func check_music_mute():
+func check_music():
+	$AudioStreamPlayer.volume_db = linear_to_db(Settings.get_music_volume())
+	$MusicStreamPlayer.volume_db = linear_to_db(Settings.get_sfx_volume())
 	if Settings.is_music_muted() == true:
 		$MusicStreamPlayer.volume_db = -80
 	else:

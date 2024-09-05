@@ -2,6 +2,8 @@ extends Node2D
 
 var muted = true
 var music_muted = true
+var sfx_volume = 0.5
+var music_volume = 0.5
 
 var save_path = "user://cropdrop_settings.save"
 
@@ -37,3 +39,14 @@ func set_music_muted(truthy):
 	music_muted = truthy
 	save_settings()
 
+func set_sfx_volume(vol):
+	sfx_volume = vol
+
+func set_music_volume(vol):
+	music_volume = vol
+
+func get_sfx_volume():
+	return sfx_volume
+
+func get_music_volume():
+	return music_volume

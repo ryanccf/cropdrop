@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://qkoj5361eiga"]
+
+[ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_c8dtm"]
+[ext_resource type="Script" path="res://tomato.gd" id="2_sn1o3"]
+
+[node name="Tomato" instance=ExtResource("1_c8dtm")]
+script = ExtResource("2_sn1o3")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(4.5, 4.5)

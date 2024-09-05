@@ -1,0 +1,164 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7sjfgkhenpv1"]
+
+[ext_resource type="Script" path="res://settings_menu.gd" id="1_8jycr"]
+[ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="1_gynyq"]
+[ext_resource type="Texture2D" uid="uid://b4cb8qd88u0jf" path="res://assets/Kenney UI/shaded-dark/shadedDark35.png" id="3_h1p4l"]
+[ext_resource type="Texture2D" uid="uid://dsnfhe4nl0h0" path="res://assets/Kenney UI/shaded-dark/shadedDark13.png" id="3_hvb86"]
+[ext_resource type="Script" path="res://ToggleSFXMute.gd" id="3_vhtrn"]
+[ext_resource type="Texture2D" uid="uid://dafgx06ya6c3m" path="res://assets/Kenney UI/shaded-light/shadedLight35.png" id="4_hqjj7"]
+[ext_resource type="Texture2D" uid="uid://5yydbiprxxap" path="res://assets/Kenney UI/shaded-dark/shadedDark17.png" id="5_8p637"]
+[ext_resource type="Script" path="res://ToggleMusicMute.gd" id="6_kc4vr"]
+
+[sub_resource type="Shortcut" id="Shortcut_1htnk"]
+resource_name = "toggle_mute"
+
+[node name="Settings Menu" type="Node2D"]
+process_mode = 2
+script = ExtResource("1_8jycr")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.700605, 0.793208, 0.912445, 1)
+polygon = PackedVector2Array(-15, -19, 614, -16, 619, 912, -13, 922)
+
+[node name="Header" type="Control" parent="."]
+custom_minimum_size = Vector2(600, 900)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="RichTextLabel" parent="Header"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 46.0
+offset_right = 59.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme = ExtResource("1_gynyq")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Settings"
+
+[node name="SoundButtons" type="Control" parent="Header"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MusicCheckButton" type="CheckButton" parent="Header/SoundButtons"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 340.0
+offset_right = 600.0
+offset_bottom = 420.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+button_pressed = true
+action_mode = 0
+shortcut = SubResource("Shortcut_1htnk")
+text = "Mute Music"
+icon = ExtResource("5_8p637")
+alignment = 1
+icon_alignment = 2
+script = ExtResource("6_kc4vr")
+
+[node name="SFXCheckButton2" type="CheckButton" parent="Header/SoundButtons"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 281.0
+offset_right = 598.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Mute Sound Effects"
+icon = ExtResource("3_hvb86")
+icon_alignment = 2
+script = ExtResource("3_vhtrn")
+
+[node name="MenuButton" type="Button" parent="Header"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 819.0
+offset_right = 411.0
+offset_bottom = 877.0
+text = "Return to Menu"
+
+[node name="Popup" type="Popup" parent="Header"]
+mode = 3
+position = Vector2i(50, 500)
+size = Vector2i(520, 264)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Header/Popup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
+[node name="MarginContainer" type="MarginContainer" parent="Header/Popup/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme = ExtResource("1_gynyq")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Header/Popup/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 140)
+layout_mode = 2
+theme = ExtResource("1_gynyq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Header/Popup/VBoxContainer/MarginContainer/CenterContainer2"]
+clip_contents = false
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme = ExtResource("1_gynyq")
+text = "Really return to menu?"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="CenterContainer" type="CenterContainer" parent="Header/Popup/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/Popup/VBoxContainer/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Control" type="Control" parent="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Return to Menu"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_h1p4l")
+texture_pressed = ExtResource("4_hqjj7")
+
+[connection signal="toggled" from="Header/SoundButtons/MusicCheckButton" to="Header/SoundButtons/MusicCheckButton" method="_on_toggled"]
+[connection signal="toggled" from="Header/SoundButtons/SFXCheckButton2" to="Header/SoundButtons/SFXCheckButton2" method="_on_toggled"]
+[connection signal="button_down" from="Header/MenuButton" to="." method="_on_menu_button_button_down"]
+[connection signal="button_up" from="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="button_up" from="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_button_up"]
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
