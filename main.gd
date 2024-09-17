@@ -49,12 +49,15 @@ func _process(_delta):
 		)
 
 func check_music():
-	$AudioStreamPlayer.volume_db = linear_to_db(Settings.get_music_volume())
-	$MusicStreamPlayer.volume_db = linear_to_db(Settings.get_sfx_volume())
 	if Settings.is_music_muted() == true:
 		$MusicStreamPlayer.volume_db = -80
 	else:
-		$MusicStreamPlayer.volume_db = 0
+		$MusicStreamPlayer.volume_db = linear_to_db(Settings.get_music_volume())
+	if Settings.is_muted() == true:
+		$AudioStreamPlayer.volume_db = -80
+	else:
+		$AudioStreamPlayer.volume_db = linear_to_db(Settings.get_sfx_volume())
+		$VegetableFactory/AudioStreamPlayer.volume_db = linear_to_db(Settings.get_sfx_volume())
 
 func play_song(song_list):
 	var the_song = load(song_list.pick_random())
