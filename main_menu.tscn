@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="1_0rwxl"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_x2gl6"]
-[ext_resource type="Texture2D" uid="uid://rk00q8c0ci8p" path="res://assets - Copy/logo-circle.png" id="3_40c24"]
-[ext_resource type="Texture2D" uid="uid://jpqd56g773sp" path="res://assets - Copy/WomanHoldingBasket.jpeg" id="3_kl2qk"]
-[ext_resource type="Texture2D" uid="uid://br7xuuewyxexx" path="res://assets - Copy/Kenney UI/shaded-dark/shadedDark31.png" id="5_yu1jk"]
-[ext_resource type="Texture2D" uid="uid://cwewp8sbtf7jk" path="res://assets - Copy/Kenney UI/shaded-light/shadedLight31.png" id="6_xewjs"]
+[ext_resource type="Texture2D" uid="uid://rk00q8c0ci8p" path="res://assets/logo-circle.png" id="3_40c24"]
+[ext_resource type="Texture2D" uid="uid://jpqd56g773sp" path="res://assets/WomanHoldingBasket.jpeg" id="3_kl2qk"]
+[ext_resource type="Texture2D" uid="uid://br7xuuewyxexx" path="res://assets/Kenney UI/shaded-dark/shadedDark31.png" id="5_yu1jk"]
+[ext_resource type="Texture2D" uid="uid://cwewp8sbtf7jk" path="res://assets/Kenney UI/shaded-light/shadedLight31.png" id="6_xewjs"]
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 1

@@ -41,9 +41,11 @@ func set_music_muted(truthy):
 
 func set_sfx_volume(vol):
 	sfx_volume = vol
+	save_settings()
 
 func set_music_volume(vol):
 	music_volume = vol
+	save_settings()
 
 func get_sfx_volume():
 	return sfx_volume
