@@ -28,23 +28,25 @@ func _ready():
 func is_muted():
 	return muted
 
+func is_music_muted():
+	return music_muted
+
 func set_muted(truthy):
 	muted = truthy
 	save_settings()
-
-func is_music_muted():
-	return music_muted
 
 func set_music_muted(truthy):
 	music_muted = truthy
 	save_settings()
 
 func set_sfx_volume(vol):
+	print("set sfx volume to " + str(vol))
 	sfx_volume = vol
 	save_settings()
 
 func set_music_volume(vol):
-	music_volume = vol
+	print("set music volume to " + str(vol))
+	music_volume = vol 
 	save_settings()
 
 func get_sfx_volume():

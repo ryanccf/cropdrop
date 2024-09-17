@@ -198,7 +198,9 @@ texture_pressed = ExtResource("4_hqjj7")
 
 [connection signal="toggled" from="Header/SoundButtons/MusicCheckButton" to="Header/SoundButtons/MusicCheckButton" method="_on_toggled"]
 [connection signal="toggled" from="Header/SoundButtons/SFXCheckButton2" to="Header/SoundButtons/SFXCheckButton2" method="_on_toggled"]
+[connection signal="ready" from="Header/SoundButtons/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_ready"]
 [connection signal="value_changed" from="Header/SoundButtons/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="ready" from="Header/SoundButtons/MusicVolumeSlider" to="." method="_on_music_volume_slider_ready"]
 [connection signal="value_changed" from="Header/SoundButtons/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="button_down" from="Header/MenuButton" to="." method="_on_menu_button_button_down"]
 [connection signal="button_up" from="Header/Popup/VBoxContainer/CenterContainer/HBoxContainer/BackButton" to="." method="_on_back_button_button_up"]

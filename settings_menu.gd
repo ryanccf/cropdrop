@@ -28,3 +28,11 @@ func _on_music_volume_slider_value_changed(new_volume):
 
 func _on_sfx_volume_slider_value_changed(new_volume):
 	Settings.set_sfx_volume(new_volume)
+
+
+func _on_sfx_volume_slider_ready():
+	$Header/SoundButtons/SFXVolumeSlider.set_value(Settings.get_sfx_volume())
+
+
+func _on_music_volume_slider_ready():
+	$Header/SoundButtons/MusicVolumeSlider.set_value(Settings.get_music_volume())
