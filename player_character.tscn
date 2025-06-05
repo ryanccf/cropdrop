@@ -7,8 +7,8 @@
 radius = 8.0
 height = 18.0
 
-[sub_resource type="Animation" id="Animation_ke5yy"]
-resource_name = "Right"
+[sub_resource type="Animation" id="Animation_e86n6"]
+resource_name = "Left"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +16,10 @@ tracks/0/path = NodePath("../Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.733333, 0.866667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(-12, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.20944, -0.0872665, 0.20944, -0.0872665, 0.20944, -0.0872665, 0.20944, -0.0872665, 0.0]
+"values": [0.0, 0.0, -0.20944, -0.0349066, -0.20944, 0.0872665, -0.20944, 0.0, -0.244346, -0.0872665, -0.244346, 0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_8hk08"]
@@ -37,8 +37,8 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_e86n6"]
-resource_name = "Left"
+[sub_resource type="Animation" id="Animation_ke5yy"]
+resource_name = "Right"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -46,10 +46,10 @@ tracks/0/path = NodePath("../Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-12, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.733333, 0.866667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, -0.20944, -0.0349066, -0.20944, 0.0872665, -0.20944, 0.0, -0.244346, -0.0872665, -0.244346, 0.0, 0.0]
+"values": [0.0, 0.20944, -0.0872665, 0.20944, -0.0872665, 0.20944, -0.0872665, 0.20944, -0.0872665, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_njjuk"]
@@ -76,6 +76,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_x7yoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dr3t47tq3s5te"]
+[gd_scene load_steps=12 format=4 uid="uid://dr3t47tq3s5te"]
 
 [ext_resource type="Texture2D" uid="uid://bkyfvh1owmu7k" path="res://assets/tilemap_packed.png" id="1_8np6j"]
 [ext_resource type="PackedScene" uid="uid://cn771ivrcskfp" path="res://player_character.tscn" id="2_rs3cq"]
+[ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="3_ouhub"]
+[ext_resource type="Texture2D" uid="uid://bvntcwpmvj4tq" path="res://assets/Kenney UI/transparent-light/transparentLight05.png" id="4_0xqqf"]
+[ext_resource type="Texture2D" uid="uid://cqxvgv1oq2lni" path="res://assets/Kenney UI/Grey/Double/check_round_grey.png" id="5_8k1kj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_877mf"]
 texture = ExtResource("1_8np6j")
@@ -248,6 +251,19 @@ terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
 terrain_set_1/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_877mf")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kebt7"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vrmqf"]
+radius = 74.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooar6"]
+size = Vector2(2000, 2000)
+
+[sub_resource type="Curve" id="Curve_l1mvw"]
+_data = [Vector2(0, 0.0735805), 0.0, 0.926419, 0, 1, Vector2(1, 1), 0.926419, 0.0, 1, 0]
+point_count = 2
+
 [node name="FarmView" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -274,3 +290,18 @@ tile_set = SubResource("TileSet_lr6gw")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
 zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayerCharacter/Camera2D"]
+
+[node name="JoystickController" parent="PlayerCharacter/Camera2D/CanvasLayer" instance=ExtResource("3_ouhub")]
+base_texture = ExtResource("4_0xqqf")
+tip_texture = ExtResource("5_8k1kj")
+deadzone_circle = SubResource("CircleShape2D_kebt7")
+tip_limit_circle = SubResource("CircleShape2D_vrmqf")
+touch_detection_region = SubResource("RectangleShape2D_ooar6")
+strength_curve = SubResource("Curve_l1mvw")
+visibility_mode = 1
+left_movement = "Player_Left"
+right_movement = "Player_Right"
+up_movement = "Player_Up"
+down_movement = "Player_Down"

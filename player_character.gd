@@ -16,8 +16,9 @@ func handle_animation(direction):
 func _physics_process(delta: float) -> void:
 	# Handle regular overhead movement
 	var input_direction = Vector2.ZERO
-	input_direction.x = Input.get_axis("Player_Left", "Player_Right")
-	input_direction.y = Input.get_axis("Player_Up", "Player_Down")
+	var direction = Input.get_vector("Player_Left", "Player_Right", "Player_Up", "Player_Down", 0)
+	input_direction.x = direction.x
+	input_direction.y = direction.y 
 
 	# Normalize the input_direction to prevent faster diagonal movement
 	if input_direction.length() > 0:
