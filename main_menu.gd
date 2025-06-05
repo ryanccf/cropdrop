@@ -1,14 +1,18 @@
 extends Node2D
 
 func _unhandled_key_input(event):
+	print("event: ", event)
 	if event.is_pressed():
 		start_game()
 
 func start_game():
 	get_tree().change_scene_to_file("res://main.tscn")
 
+func start_farm():
+	get_tree().change_scene_to_file("res://farm_view.tscn")
+
 func _on_button_button_down():
-	start_game()
+	start_farm()
 
 func _on_texture_button_button_up():
 	var settings_menu = load("res://settings_menu.tscn").instantiate()
@@ -17,3 +21,10 @@ func _on_texture_button_button_up():
 
 func _on_credits_button_button_up():
 	get_tree().change_scene_to_file("res://credits.tscn")
+
+
+func _on_farm_button_down() -> void:
+	start_farm()
+
+func _on_game_button_down() -> void:
+	start_game()

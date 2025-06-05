@@ -61,10 +61,7 @@ func check_music():
 
 func play_song(song_list):
 	var the_song = load(song_list.pick_random())
-	print("THE SONG")
-	print(the_song)
 	if the_song is AudioStream:
-		print("play music")
 		$MusicStreamPlayer.stream = the_song
 		$MusicStreamPlayer.play()
 
