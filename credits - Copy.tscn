@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf578tyccm4ug"]
 
-[ext_resource type="Script" path="res://credits.gd" id="1_g5anh"]
+[ext_resource type="Script" uid="uid://ci03iqtlmyut3" path="res://credits.gd" id="1_g5anh"]
 [ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="2_h6vqk"]
 
 [node name="Credits" type="Node2D"]

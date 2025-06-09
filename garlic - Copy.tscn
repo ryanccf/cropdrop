@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cytqquvraotjb"]
 
 [ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_u5ksx"]
-[ext_resource type="Script" path="res://garlic.gd" id="2_qyvmg"]
+[ext_resource type="Script" uid="uid://ccyv1qd6wxang" path="res://garlic.gd" id="2_qyvmg"]
 [ext_resource type="Texture2D" uid="uid://blyhfsql5gsyn" path="res://assets/Garlic.png" id="3_bq55u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c1dha"]

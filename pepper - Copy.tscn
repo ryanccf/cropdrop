@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://csoh0r0v53qxn"]
 
 [ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_hjmyf"]
-[ext_resource type="Script" path="res://pepper.gd" id="2_dllay"]
+[ext_resource type="Script" uid="uid://dii0yhpgs8s86" path="res://pepper.gd" id="2_dllay"]
 [ext_resource type="Texture2D" uid="uid://c4eop7ullxxeh" path="res://assets/Pepper.png" id="3_4dq62"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkooe"]

@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7sjfgkhenpv1"]
 
-[ext_resource type="Script" path="res://settings_menu.gd" id="1_8jycr"]
+[ext_resource type="Script" uid="uid://r4qtnrsi4u16" path="res://settings_menu.gd" id="1_8jycr"]
 [ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="1_gynyq"]
 [ext_resource type="Texture2D" uid="uid://b4cb8qd88u0jf" path="res://assets/Kenney UI/shaded-dark/shadedDark35.png" id="3_h1p4l"]
 [ext_resource type="Texture2D" uid="uid://dsnfhe4nl0h0" path="res://assets/Kenney UI/shaded-dark/shadedDark13.png" id="3_hvb86"]
-[ext_resource type="Script" path="res://ToggleSFXMute.gd" id="3_vhtrn"]
+[ext_resource type="Script" uid="uid://dojpelblsmurc" path="res://ToggleSFXMute.gd" id="3_vhtrn"]
 [ext_resource type="Texture2D" uid="uid://dafgx06ya6c3m" path="res://assets/Kenney UI/shaded-light/shadedLight35.png" id="4_hqjj7"]
 [ext_resource type="Texture2D" uid="uid://5yydbiprxxap" path="res://assets/Kenney UI/shaded-dark/shadedDark17.png" id="5_8p637"]
-[ext_resource type="Script" path="res://ToggleMusicMute.gd" id="6_kc4vr"]
+[ext_resource type="Script" uid="uid://bjd6kvwrh7v7b" path="res://ToggleMusicMute.gd" id="6_kc4vr"]
 
 [sub_resource type="Shortcut" id="Shortcut_1htnk"]
 resource_name = "toggle_mute"
@@ -58,9 +58,9 @@ offset_right = 600.0
 offset_bottom = 420.0
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 0.784314)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 button_pressed = true
 action_mode = 0
@@ -79,9 +79,9 @@ offset_right = 598.0
 offset_bottom = 337.0
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 0.784314)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "Mute Sound Effects"
 icon = ExtResource("3_hvb86")

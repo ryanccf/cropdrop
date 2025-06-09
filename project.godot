@@ -12,13 +12,14 @@ config_version=5
 
 config/name="cropdrop"
 run/main_scene="res://main_menu.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://assets/Pumpkin.png"
 
 [autoload]
 
 Settings="*res://settings.tscn"
 Screenshots="*res://screenshots.gd"
+PlayerItems="*res://PlayerItems.gd"
 
 [display]
 

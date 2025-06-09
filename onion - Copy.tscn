@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_hlu0b"]
 [ext_resource type="Texture2D" uid="uid://cx8imrt3duqsc" path="res://assets/Onion.png" id="2_75s07"]
-[ext_resource type="Script" path="res://onion.gd" id="2_ykjqc"]
+[ext_resource type="Script" uid="uid://82scirgauxab" path="res://onion.gd" id="2_ykjqc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kila0"]
 radius = 38.0

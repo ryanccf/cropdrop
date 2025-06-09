@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://di8iqil0dq5hn"]
 
 [ext_resource type="PackedScene" uid="uid://beoc5vh60p04u" path="res://vegetable.tscn" id="1_4lnul"]
-[ext_resource type="Script" path="res://cauliflower.gd" id="2_p7y2p"]
+[ext_resource type="Script" uid="uid://b2oivuekgo1kp" path="res://cauliflower.gd" id="2_p7y2p"]
 [ext_resource type="Texture2D" uid="uid://bf828sivn0sjx" path="res://assets/Cauliflower.png" id="3_v5n7g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hck16"]

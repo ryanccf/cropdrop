@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cn771ivrcskfp"]
 
 [ext_resource type="Texture2D" uid="uid://bgmcjn656cg8w" path="res://assets/PlayerCharacter.png" id="1_7j6bf"]
-[ext_resource type="Script" path="res://player_character.gd" id="1_x7yoq"]
+[ext_resource type="Script" uid="uid://dgfis0fmwefw2" path="res://player_character.gd" id="1_x7yoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oiqkd"]
 radius = 8.0
@@ -69,10 +69,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p8gyo"]
 _data = {
-"Left": SubResource("Animation_e86n6"),
-"RESET": SubResource("Animation_8hk08"),
-"Right": SubResource("Animation_ke5yy"),
-"Shimmy": SubResource("Animation_njjuk")
+&"Left": SubResource("Animation_e86n6"),
+&"RESET": SubResource("Animation_8hk08"),
+&"Right": SubResource("Animation_ke5yy"),
+&"Shimmy": SubResource("Animation_njjuk")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -90,5 +90,5 @@ texture = ExtResource("1_7j6bf")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 root_node = NodePath("../../PlayerCharacter")
 libraries = {
-"": SubResource("AnimationLibrary_p8gyo")
+&"": SubResource("AnimationLibrary_p8gyo")
 }

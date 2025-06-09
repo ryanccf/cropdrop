@@ -52,9 +52,39 @@ func set_indicators():
 
 func drop(spawn_global_position):
 	spawned_vegetable.emit()
-	spawn_vegetable(cycle_vegetable_queue(), Vector2(spawn_global_position.x, 0))
+	var new_veg = cycle_vegetable_queue()
+	update_veg_count(new_veg)
+	spawn_vegetable(new_veg, Vector2(spawn_global_position.x, 0))
 	spawn_sparkle(Vector2(spawn_global_position.x, 0))
 	set_indicators()
+
+func update_veg_count(new_veg):
+	match new_veg:
+		0:
+			PlayerItems.add_garlic(1)
+		1:
+			PlayerItems.add_potato(1)
+		2:
+			PlayerItems.add_tomato(1)
+		3:
+			PlayerItems.add_onion(1)
+		4:
+			PlayerItems.add_pepper(1)
+		5:
+			PlayerItems.add_carrot(1)
+		6:
+			PlayerItems.add_cucumber(1)
+		7:
+			PlayerItems.add_squash(1)
+		8:
+			PlayerItems.add_broccoli(1)
+		9:
+			PlayerItems.add_cabbage(1)
+		10:
+			PlayerItems.add_cauliflower(1)
+		11:
+			PlayerItems.add_pumpkin(1)
+		
 
 func spawn_sparkle(spawn_global_position):
 	var instance = sparkle_scene.instantiate()
@@ -95,6 +125,7 @@ func _bind_spawn_vegetable(vegetable_index):
 		$ComboTimer.start()
 		combo += 1
 		play_merge_sound()
+		update_veg_count(vegetable_index)
 		spawn_vegetable(vegetable_index, spawn_global_position)
 
 func cycle_vegetable_queue():

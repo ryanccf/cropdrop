@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d1u6i5tduwm7t"]
 
 [ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="1_0rwxl"]
-[ext_resource type="Script" path="res://main_menu.gd" id="1_x2gl6"]
+[ext_resource type="Script" uid="uid://6wugtgx1cqnj" path="res://main_menu.gd" id="1_x2gl6"]
 [ext_resource type="Texture2D" uid="uid://rk00q8c0ci8p" path="res://assets/logo-circle.png" id="3_40c24"]
 [ext_resource type="Texture2D" uid="uid://jpqd56g773sp" path="res://assets/WomanHoldingBasket.jpeg" id="3_kl2qk"]
 [ext_resource type="Texture2D" uid="uid://br7xuuewyxexx" path="res://assets/Kenney UI/shaded-dark/shadedDark31.png" id="5_yu1jk"]

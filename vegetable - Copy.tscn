@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://beoc5vh60p04u"]
 
 [ext_resource type="Texture2D" uid="uid://dj8twf5o6w0rl" path="res://assets/Tomato.png" id="1_lvvjs"]
-[ext_resource type="Script" path="res://vegetable.gd" id="1_wy20c"]
+[ext_resource type="Script" uid="uid://tesgonfsuqr0" path="res://vegetable.gd" id="1_wy20c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywfbb"]
 radius = 48.1664

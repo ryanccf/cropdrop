@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dp6fe6mhi1ux3"]
 
-[ext_resource type="Script" path="res://sparkle.gd" id="1_2emux"]
+[ext_resource type="Script" uid="uid://2fagpbi1ylup" path="res://sparkle.gd" id="1_2emux"]
 [ext_resource type="Texture2D" uid="uid://30i2e30ugxrj" path="res://assets/sparkles-emoji.svg" id="2_ofp6y"]
 
 [sub_resource type="Animation" id="Animation_wevsu"]
@@ -59,7 +59,7 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0tc1j"]
 _data = {
-"Die": SubResource("Animation_wevsu")
+&"Die": SubResource("Animation_wevsu")
 }
 
 [node name="Sparkle" type="Node2D"]
