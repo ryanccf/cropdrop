@@ -41,10 +41,6 @@ func load_data():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_garlic(garlic)
-	set_potato(potato)
-	print(get_garlic())
-	print(get_potato())
 	load_data()
 
 func get_garlic():

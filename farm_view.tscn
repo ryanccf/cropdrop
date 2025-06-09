@@ -1,8 +1,10 @@
-[gd_scene load_steps=25 format=4 uid="uid://dr3t47tq3s5te"]
+[gd_scene load_steps=27 format=4 uid="uid://dr3t47tq3s5te"]
 
 [ext_resource type="Texture2D" uid="uid://bkyfvh1owmu7k" path="res://assets/tilemap_packed.png" id="1_8np6j"]
 [ext_resource type="Texture2D" uid="uid://blyhfsql5gsyn" path="res://assets/Garlic.png" id="1_a8fmu"]
+[ext_resource type="Texture2D" uid="uid://c8r2rsrke8jcv" path="res://assets/Kenney UI/transparent-light/transparentLight31.png" id="2_p1uxj"]
 [ext_resource type="PackedScene" uid="uid://cn771ivrcskfp" path="res://player_character.tscn" id="2_rs3cq"]
+[ext_resource type="Texture2D" uid="uid://btfrfahmhcpfp" path="res://assets/Kenney UI/transparent-dark/transparentDark31.png" id="3_gb22c"]
 [ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="3_ouhub"]
 [ext_resource type="Texture2D" uid="uid://bvntcwpmvj4tq" path="res://assets/Kenney UI/transparent-light/transparentLight05.png" id="4_0xqqf"]
 [ext_resource type="Texture2D" uid="uid://cqxvgv1oq2lni" path="res://assets/Kenney UI/Grey/Double/check_round_grey.png" id="5_8k1kj"]
@@ -279,6 +281,217 @@ point_count = 2
 
 [node name="FarmView" type="Node2D"]
 
+[node name="UIView" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UIView"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_yyaab")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIView/UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="UIView/UI/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("2_p1uxj")
+texture_pressed = ExtResource("3_gb22c")
+
+[node name="Panel" type="Panel" parent="UIView/UI"]
+layout_mode = 2
+offset_top = 56.0
+offset_right = 102.0
+offset_bottom = 56.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIView/UI/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="GarlicLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Garlic
+"
+
+[node name="GarlicCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0
+"
+
+[node name="GarlicIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer"]
+texture = ExtResource("1_a8fmu")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="PotatoLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Potato
+"
+
+[node name="PotatoCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="PotatoIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer2"]
+texture = ExtResource("7_ly0gu")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TomatoLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Tomato
+"
+
+[node name="TomatoCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "0"
+
+[node name="TomatoIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer3"]
+texture = ExtResource("9_qm3a8")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="OnionLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Onion"
+
+[node name="OnionCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "0"
+
+[node name="OnionIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer4"]
+texture = ExtResource("10_jv2yr")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="PepperLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Pepper"
+
+[node name="PepperCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "0"
+
+[node name="PepperIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer5"]
+texture = ExtResource("11_5gbdg")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CarrotLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Carrot"
+
+[node name="CarrotCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "0"
+
+[node name="CarrotIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer6"]
+texture = ExtResource("12_nrluo")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CucumberLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "Cucumber"
+
+[node name="CucumberCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "0"
+
+[node name="CucumberIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer7"]
+texture = ExtResource("13_ntv8n")
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SquashLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "Squash"
+
+[node name="SquashCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "0"
+
+[node name="SquashIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer8"]
+texture = ExtResource("14_1pr5j")
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BroccoliLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "Broccoli"
+
+[node name="BroccoliCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "0"
+
+[node name="BroccoliIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer9"]
+texture = ExtResource("15_6uitf")
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CabbageLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+text = "Cabbage"
+
+[node name="CabbageCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+text = "0"
+
+[node name="CabbageIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer10"]
+texture = ExtResource("16_p1uxj")
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CauliflowerLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+text = "Cauliflower
+"
+
+[node name="CauliflowerCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+text = "0"
+
+[node name="CauliflowerIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer11"]
+texture = ExtResource("17_1pr5j")
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="UIView/UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="PumpkinLabel" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+text = "Pumpkin"
+
+[node name="PumpkinCounter" type="Label" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+text = "0"
+
+[node name="PumpkinIcon" type="Sprite2D" parent="UIView/UI/Panel/VBoxContainer/HBoxContainer12"]
+texture = ExtResource("18_6uitf")
+
 [node name="GameView" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="GameView"]
@@ -309,6 +522,7 @@ zoom = Vector2(2, 2)
 [node name="CanvasLayer" type="CanvasLayer" parent="GameView/PlayerCharacter/Camera2D"]
 
 [node name="JoystickController" parent="GameView/PlayerCharacter/Camera2D/CanvasLayer" instance=ExtResource("3_ouhub")]
+process_mode = 3
 base_texture = ExtResource("4_0xqqf")
 tip_texture = ExtResource("5_8k1kj")
 deadzone_circle = SubResource("CircleShape2D_kebt7")
@@ -321,195 +535,5 @@ right_movement = "Player_Right"
 up_movement = "Player_Up"
 down_movement = "Player_Down"
 
-[node name="UIView" type="CanvasLayer" parent="."]
-
-[node name="UI" type="Control" parent="UIView"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("6_yyaab")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UIView/UI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="GarlicLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Garlic
-"
-
-[node name="GarlicCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "0
-"
-
-[node name="GarlicIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer"]
-texture = ExtResource("1_a8fmu")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="PotatoLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Potato
-"
-
-[node name="PotatoCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "0"
-
-[node name="PotatoIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer2"]
-texture = ExtResource("7_ly0gu")
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="TomatoLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "Tomato
-"
-
-[node name="TomatoCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "0"
-
-[node name="TomatoIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer3"]
-texture = ExtResource("9_qm3a8")
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="OnionLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-text = "Onion"
-
-[node name="OnionCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-text = "0"
-
-[node name="OnionIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer4"]
-texture = ExtResource("10_jv2yr")
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="PepperLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer5"]
-layout_mode = 2
-text = "Pepper"
-
-[node name="PepperCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer5"]
-layout_mode = 2
-text = "0"
-
-[node name="PepperIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer5"]
-texture = ExtResource("11_5gbdg")
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="CarrotLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer6"]
-layout_mode = 2
-text = "Carrot"
-
-[node name="CarrotCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer6"]
-layout_mode = 2
-text = "0"
-
-[node name="CarrotIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer6"]
-texture = ExtResource("12_nrluo")
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="CucumberLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer7"]
-layout_mode = 2
-text = "Cucumber"
-
-[node name="CucumberCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer7"]
-layout_mode = 2
-text = "0"
-
-[node name="CucumberIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer7"]
-texture = ExtResource("13_ntv8n")
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="SquashLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer8"]
-layout_mode = 2
-text = "Squash"
-
-[node name="SquashCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer8"]
-layout_mode = 2
-text = "0"
-
-[node name="SquashIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer8"]
-texture = ExtResource("14_1pr5j")
-
-[node name="HBoxContainer9" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="BroccoliLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer9"]
-layout_mode = 2
-text = "Broccoli"
-
-[node name="BroccoliCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer9"]
-layout_mode = 2
-text = "0"
-
-[node name="BroccoliIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer9"]
-texture = ExtResource("15_6uitf")
-
-[node name="HBoxContainer10" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="CabbageLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer10"]
-layout_mode = 2
-text = "Cabbage"
-
-[node name="CabbageCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer10"]
-layout_mode = 2
-text = "0"
-
-[node name="CabbageIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer10"]
-texture = ExtResource("16_p1uxj")
-
-[node name="HBoxContainer11" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="CauliflowerLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer11"]
-layout_mode = 2
-text = "Cauliflower
-"
-
-[node name="CauliflowerCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer11"]
-layout_mode = 2
-text = "0"
-
-[node name="CauliflowerIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer11"]
-texture = ExtResource("17_1pr5j")
-
-[node name="HBoxContainer12" type="HBoxContainer" parent="UIView/UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="PumpkinLabel" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer12"]
-layout_mode = 2
-text = "Pumpkin"
-
-[node name="PumpkinCounter" type="Label" parent="UIView/UI/VBoxContainer/HBoxContainer12"]
-layout_mode = 2
-text = "0"
-
-[node name="PumpkinIcon" type="Sprite2D" parent="UIView/UI/VBoxContainer/HBoxContainer12"]
-texture = ExtResource("18_6uitf")
+[connection signal="button_up" from="UIView/UI/HBoxContainer/TextureButton" to="UIView/UI" method="_on_texture_button_button_up"]
+[connection signal="toggled" from="UIView/UI/HBoxContainer/TextureButton" to="UIView/UI" method="_on_texture_button_toggled"]
