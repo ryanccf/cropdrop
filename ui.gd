@@ -1,7 +1,9 @@
 extends Control
 
+@onready var panel_animation_player: AnimationPlayer = get_node("Panel/PanelAnimationPlayer")
+
 func _ready():
-	get_node("Panel").visible = false
+	get_node("Panel").position = Vector2(-300 ,0)
 
 func _process(_delta):
 	get_node("Panel/VBoxContainer/HBoxContainer/GarlicCounter").set_text(str(PlayerItems.get_garlic()))
@@ -18,4 +20,4 @@ func _process(_delta):
 	get_node("Panel/VBoxContainer/HBoxContainer12/PumpkinCounter").set_text(str(PlayerItems.get_pumpkin()))
 
 func _on_texture_button_toggled(toggled_on: bool) -> void:
-	get_node("Panel").visible = toggled_on # Replace with function body.
+	panel_animation_player.play("Appear") if toggled_on else panel_animation_player.play("Disappear")
