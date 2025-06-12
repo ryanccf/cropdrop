@@ -86,9 +86,11 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Visit the Farm!"
 
-[node name="TextureButton" type="TextureButton" parent="Page"]
-offset_right = 64.0
-offset_bottom = 64.0
+[node name="SettingsButton" type="TextureButton" parent="Page"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 69.0
+offset_bottom = 69.0
 texture_normal = ExtResource("5_yu1jk")
 texture_pressed = ExtResource("6_xewjs")
 
@@ -101,5 +103,5 @@ text = "Credits"
 
 [connection signal="button_down" from="Page/GameButton" to="." method="_on_game_button_down"]
 [connection signal="button_down" from="Page/FarmButton" to="." method="_on_farm_button_down"]
-[connection signal="button_up" from="Page/TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="Page/SettingsButton" to="." method="_on_texture_button_button_up"]
 [connection signal="button_up" from="Page/CreditsButton" to="." method="_on_credits_button_button_up"]

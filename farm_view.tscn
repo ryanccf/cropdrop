@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dr3t47tq3s5te"]
+[gd_scene load_steps=35 format=4 uid="uid://dr3t47tq3s5te"]
 
 [ext_resource type="Texture2D" uid="uid://bkyfvh1owmu7k" path="res://assets/tilemap_packed.png" id="1_8np6j"]
 [ext_resource type="Texture2D" uid="uid://blyhfsql5gsyn" path="res://assets/Garlic.png" id="1_a8fmu"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://btfrfahmhcpfp" path="res://assets/Kenney UI/transparent-dark/transparentDark31.png" id="3_gb22c"]
 [ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="3_ouhub"]
 [ext_resource type="Texture2D" uid="uid://bvntcwpmvj4tq" path="res://assets/Kenney UI/transparent-light/transparentLight05.png" id="4_0xqqf"]
+[ext_resource type="Texture2D" uid="uid://1ek47qbchtjb" path="res://assets/Kenney UI/transparent-dark/transparentDark29.png" id="4_qq6wm"]
 [ext_resource type="Texture2D" uid="uid://cqxvgv1oq2lni" path="res://assets/Kenney UI/Grey/Double/check_round_grey.png" id="5_8k1kj"]
+[ext_resource type="Texture2D" uid="uid://d2w1x76kejrun" path="res://assets/Kenney UI/transparent-light/transparentLight29.png" id="5_b8d6h"]
 [ext_resource type="Script" uid="uid://cu7bh5k1teo0b" path="res://ui.gd" id="6_yyaab"]
 [ext_resource type="Texture2D" uid="uid://oghcyvc0d50" path="res://assets/Potato.png" id="7_ly0gu"]
 [ext_resource type="Texture2D" uid="uid://dj8twf5o6w0rl" path="res://assets/Tomato.png" id="9_qm3a8"]
@@ -41,7 +43,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_p1uxj")
 
 [sub_resource type="Animation" id="Animation_p1uxj"]
 resource_name = "Appear"
-length = 0.7
+length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,10 +51,26 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 3.73213),
+"times": PackedFloat32Array(0, 0.7, 1.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-300, 56), Vector2(0, 56)]
+"values": [Vector2(-300, 56), Vector2(15, 56), Vector2(5, 56)]
+}
+
+[sub_resource type="Animation" id="Animation_qq6wm"]
+resource_name = "Disappear"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 56), Vector2(15, 56), Vector2(-300, 56)]
 }
 
 [sub_resource type="Animation" id="Animation_gb22c"]
@@ -68,22 +86,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 56)]
-}
-
-[sub_resource type="Animation" id="Animation_qq6wm"]
-resource_name = "Disappear"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 56), Vector2(15, 56), Vector2(-300, 56)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8d6h"]
@@ -361,20 +363,23 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_yyaab")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UIView/UI"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 105.0
+offset_bottom = 53.0
 
-[node name="TextureButton" type="TextureButton" parent="UIView/UI/HBoxContainer"]
+[node name="SettingsButton" type="TextureButton" parent="UIView/UI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_b8d6h")
+texture_pressed = ExtResource("4_qq6wm")
+
+[node name="VeggieButton" type="TextureButton" parent="UIView/UI/HBoxContainer"]
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("2_p1uxj")
@@ -691,4 +696,5 @@ right_movement = "Player_Right"
 up_movement = "Player_Up"
 down_movement = "Player_Down"
 
-[connection signal="toggled" from="UIView/UI/HBoxContainer/TextureButton" to="UIView/UI" method="_on_texture_button_toggled"]
+[connection signal="button_up" from="UIView/UI/HBoxContainer/SettingsButton" to="UIView/UI" method="_on_settings_button_up"]
+[connection signal="toggled" from="UIView/UI/HBoxContainer/VeggieButton" to="UIView/UI" method="_on_veggie_button_toggled"]

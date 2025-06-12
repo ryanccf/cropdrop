@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn771ivrcskfp"]
+[gd_scene load_steps=11 format=3 uid="uid://cn771ivrcskfp"]
 
 [ext_resource type="Texture2D" uid="uid://bgmcjn656cg8w" path="res://assets/PlayerCharacter.png" id="1_7j6bf"]
 [ext_resource type="Script" uid="uid://dgfis0fmwefw2" path="res://player_character.gd" id="1_x7yoq"]
@@ -78,6 +78,12 @@ _data = {
 &"Shimmy": SubResource("Animation_njjuk")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5up26"]
+blend_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5up26"]
+radius = 43.0769
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_x7yoq")
@@ -95,3 +101,11 @@ root_node = NodePath("../../PlayerCharacter")
 libraries = {
 &"": SubResource("AnimationLibrary_p8gyo")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+material = SubResource("CanvasItemMaterial_5up26")
+shape = SubResource("CircleShape2D_5up26")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

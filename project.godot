@@ -73,6 +73,8 @@ pointing/emulate_mouse_from_touch=false
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Environment"
+2d_physics/layer_3="Plants"
+2d_physics/layer_4="Powerups"
 
 [physics]
 

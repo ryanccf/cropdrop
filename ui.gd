@@ -19,5 +19,10 @@ func _process(_delta):
 	get_node("Panel/VBoxContainer/HBoxContainer11/CauliflowerCounter").set_text(str(PlayerItems.get_cauliflower()))
 	get_node("Panel/VBoxContainer/HBoxContainer12/PumpkinCounter").set_text(str(PlayerItems.get_pumpkin()))
 
-func _on_texture_button_toggled(toggled_on: bool) -> void:
+func _on_veggie_button_toggled(toggled_on: bool) -> void:
 	panel_animation_player.play("Appear") if toggled_on else panel_animation_player.play("Disappear")
+
+func _on_settings_button_up() -> void:
+	var settings_menu = load("res://settings_menu.tscn").instantiate()
+	settings_menu.z_index = 10
+	add_child(settings_menu)
