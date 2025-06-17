@@ -76,6 +76,5 @@ func _on_menu_button_button_up():
 	settings_menu.z_index = 10
 	add_child(settings_menu)
 
-
 func _on_music_stream_player_finished():
 	play_song(song_list)

@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.289931, 0.320313, 0.181427, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "Normal",
+&"description": "This is the woman who buys the potatoes.",
+&"display_name": "Potato Lady",
+&"mirror": false,
+&"nicknames": ["Taters"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Normal": {
+"export_overrides": {
+"image": "\"res://assets/NPC_Face.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

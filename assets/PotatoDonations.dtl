@@ -1,0 +1,7 @@
+join PotatoBuyer center
+Be so for real right now. Do you want to give me a potato?
+- Sure! Here!
+	Thanks!!
+- I don't have one.
+	Nobody likes selfish people.
+leave PotatoBuyer [animation="Slide Out Right" length="1.0" wait="true"]

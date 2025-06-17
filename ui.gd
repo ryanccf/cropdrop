@@ -27,6 +27,9 @@ func _on_settings_button_up() -> void:
 	settings_menu.z_index = 10
 	add_child(settings_menu)
 
-
 func _on_touch_screen_button_released() -> void:
-	print("button pressed")
+	if Dialogic.current_timeline != null:
+		return
+	else:
+		Dialogic.start('PotatoDonations')
+		get_viewport().set_input_as_handled()
