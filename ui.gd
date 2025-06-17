@@ -26,3 +26,7 @@ func _on_settings_button_up() -> void:
 	var settings_menu = load("res://settings_menu.tscn").instantiate()
 	settings_menu.z_index = 10
 	add_child(settings_menu)
+
+
+func _on_touch_screen_button_released() -> void:
+	print("button pressed")
