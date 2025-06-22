@@ -13,7 +13,7 @@
 &"display_name": "Potato Lady",
 &"mirror": false,
 &"nicknames": ["Taters"],
-&"offset": Vector2(0, 0),
+&"offset": Vector2(0, -150),
 &"portraits": {
 "Normal": {
 "export_overrides": {

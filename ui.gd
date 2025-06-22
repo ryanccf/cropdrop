@@ -1,9 +1,12 @@
 extends Control
 
 @onready var panel_animation_player: AnimationPlayer = get_node("Panel/PanelAnimationPlayer")
+@onready var money_panel_animation_player: AnimationPlayer = get_node("MoneyPanel/PanelAnimationPlayer")
+
 
 func _ready():
 	get_node("Panel").position = Vector2(-300 ,0)
+	get_node("MoneyPanel").position = Vector2(605 ,0)
 
 func _process(_delta):
 	get_node("Panel/VBoxContainer/HBoxContainer/GarlicCounter").set_text(str(PlayerItems.get_garlic()))
@@ -20,7 +23,8 @@ func _process(_delta):
 	get_node("Panel/VBoxContainer/HBoxContainer12/PumpkinCounter").set_text(str(PlayerItems.get_pumpkin()))
 
 func _on_veggie_button_toggled(toggled_on: bool) -> void:
-	panel_animation_player.play("Appear") if toggled_on else panel_animation_player.play("Disappear")
+	panel_animation_player.play("Veggies_Appear") if toggled_on else panel_animation_player.play("Veggies_Disappear")
+	money_panel_animation_player.play("Appear") if toggled_on else money_panel_animation_player.play("Disappear")
 
 func _on_settings_button_up() -> void:
 	var settings_menu = load("res://settings_menu.tscn").instantiate()

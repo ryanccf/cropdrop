@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dr3t47tq3s5te"]
+[gd_scene load_steps=40 format=4 uid="uid://dr3t47tq3s5te"]
 
 [ext_resource type="Texture2D" uid="uid://bkyfvh1owmu7k" path="res://assets/tilemap_packed.png" id="1_8np6j"]
 [ext_resource type="Texture2D" uid="uid://blyhfsql5gsyn" path="res://assets/Garlic.png" id="1_a8fmu"]
@@ -56,7 +56,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.7, 1.06667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-300, 56), Vector2(15, 56), Vector2(5, 56)]
+"values": [Vector2(620, 56), Vector2(385, 56), Vector2(400, 56)]
 }
 
 [sub_resource type="Animation" id="Animation_qq6wm"]
@@ -72,7 +72,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(5, 56), Vector2(15, 56), Vector2(-300, 56)]
+"values": [Vector2(400, 56), Vector2(385, 56), Vector2(605, 56)]
 }
 
 [sub_resource type="Animation" id="Animation_gb22c"]
@@ -90,11 +90,45 @@ tracks/0/keys = {
 "values": [Vector2(0, 56)]
 }
 
+[sub_resource type="Animation" id="Animation_o6r80"]
+resource_name = "Veggies_Disappear"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 56), Vector2(15, 56), Vector2(-305, 56)]
+}
+
+[sub_resource type="Animation" id="Animation_dsfef"]
+resource_name = "Veggies_Appear"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-305, 56), Vector2(15, 56), Vector2(5, 56)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8d6h"]
 _data = {
 &"Appear": SubResource("Animation_p1uxj"),
 &"Disappear": SubResource("Animation_qq6wm"),
-&"RESET": SubResource("Animation_gb22c")
+&"RESET": SubResource("Animation_gb22c"),
+&"Veggies_Appear": SubResource("Animation_dsfef"),
+&"Veggies_Disappear": SubResource("Animation_o6r80")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_877mf"]
@@ -654,6 +688,42 @@ layout_mode = 2
 text = "0"
 
 [node name="PanelAnimationPlayer" type="AnimationPlayer" parent="UIView/UI/Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_b8d6h")
+}
+
+[node name="MoneyPanel" type="Panel" parent="UIView/UI"]
+layout_mode = 2
+offset_top = 56.0
+offset_right = 200.0
+offset_bottom = 86.0
+theme = SubResource("Theme_gb22c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIView/UI/MoneyPanel"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIView/UI/MoneyPanel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+tooltip_text = "Kills vampires (there are no vampires in this game)"
+
+[node name="Control" type="Control" parent="UIView/UI/MoneyPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MoneyLabel" type="Label" parent="UIView/UI/MoneyPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "$"
+
+[node name="MoneyCounter" type="Label" parent="UIView/UI/MoneyPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="PanelAnimationPlayer" type="AnimationPlayer" parent="UIView/UI/MoneyPanel"]
 libraries = {
 &"": SubResource("AnimationLibrary_b8d6h")
 }
