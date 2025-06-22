@@ -1,5 +1,6 @@
 extends Node2D
 
+var money = 0
 var garlic = 0
 var potato = 0
 var tomato = 0
@@ -17,6 +18,7 @@ var save_path = "user://cropdrop_user_data.save"
 
 func save_data():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(money)
 	file.store_var(garlic)
 	file.store_var(potato)
 	file.store_var(tomato)
@@ -43,6 +45,21 @@ func load_data():
 func _ready():
 	load_data()
 
+func get_money():
+	return money
+
+func set_money(newVal):
+	money = newVal
+	save_data()
+
+func add_money(additional):
+	money += additional
+	save_data()
+
+func del_money(amount):
+	money -= amount
+	save_data()
+
 func get_garlic():
 	return garlic
 
@@ -54,6 +71,10 @@ func add_garlic(additional):
 	garlic += additional
 	save_data()
 
+func del_garlic(amount):
+	garlic -= amount
+	save_data()
+
 func get_potato():
 	return potato
 
@@ -63,6 +84,10 @@ func set_potato(newVal):
 
 func add_potato(additional):
 	potato += additional
+	save_data()
+	
+func del_potato(amount):
+	potato -= amount
 	save_data()
 
 func get_tomato():
@@ -76,6 +101,10 @@ func add_tomato(additional):
 	tomato += additional
 	save_data()
 
+func del_tomato(amount):
+	tomato -= amount
+	save_data()
+
 func get_onion():
 	return onion
 
@@ -85,6 +114,10 @@ func set_onion(newVal):
 
 func add_onion(additional):
 	onion += additional
+	save_data()
+
+func del_onion(amount):
+	onion -= amount
 	save_data()
 
 func get_pepper():
@@ -98,6 +131,10 @@ func add_pepper(additional):
 	pepper += additional
 	save_data()
 
+func del_pepper(amount):
+	pepper -= amount
+	save_data()
+
 func get_carrot():
 	return carrot
 
@@ -107,6 +144,10 @@ func set_carrot(newVal):
 
 func add_carrot(additional):
 	carrot += additional
+	save_data()
+
+func del_carrot(amount):
+	carrot -= amount
 	save_data()
 
 func get_cucumber():
@@ -120,6 +161,10 @@ func add_cucumber(additional):
 	cucumber += additional
 	save_data()
 
+func del_cucumber(amount):
+	cucumber -= amount
+	save_data()
+
 func get_squash():
 	return squash
 
@@ -129,6 +174,10 @@ func set_squash(newVal):
 
 func add_squash(additional):
 	squash += additional
+	save_data()
+
+func del_squash(amount):
+	squash -= amount
 	save_data()
 
 func get_broccoli():
@@ -142,6 +191,10 @@ func add_broccoli(additional):
 	broccoli += additional
 	save_data()
 
+func del_broccoli(amount):
+	broccoli -= amount
+	save_data()
+
 func get_cabbage():
 	return cabbage
 
@@ -151,6 +204,10 @@ func set_cabbage(newVal):
 
 func add_cabbage(additional):
 	cabbage += additional
+	save_data()
+
+func del_cabbage(amount):
+	cabbage -= amount
 	save_data()
 
 func get_cauliflower():
@@ -164,6 +221,10 @@ func add_cauliflower(additional):
 	cauliflower += additional
 	save_data()
 
+func del_cauliflower(amount):
+	cauliflower -= amount
+	save_data()
+
 func get_pumpkin():
 	return pumpkin
 
@@ -173,4 +234,8 @@ func set_pumpkin(newVal):
 
 func add_pumpkin(additional):
 	pumpkin += additional
+	save_data()
+
+func del_pumpkin(amount):
+	pumpkin -= amount
 	save_data()
