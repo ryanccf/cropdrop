@@ -38,6 +38,16 @@ func load_data():
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		garlic = file.get_var(garlic)
 		potato = file.get_var(potato)
+		tomato = file.get_var(tomato)
+		onion = file.get_var(onion)
+		pepper = file.get_var(pepper)
+		carrot = file.get_var(carrot)
+		cucumber = file.get_var(cucumber)
+		squash = file.get_var(squash)
+		broccoli = file.get_var(broccoli)
+		cabbage = file.get_var(cabbage)
+		cauliflower = file.get_var(cauliflower)
+		pumpkin = file.get_var(pumpkin)
 	else:
 		print("no Player Items save file was loaded...")
 

@@ -34,7 +34,6 @@ func take_screenshot():
 func game_over_screen():
 	take_screenshot()
 	await get_tree().create_timer(0.1).timeout #TODO make await work instead of this quantum grossness.
-	get_parent().get_tree().paused = false
 	get_tree().change_scene_to_file("res://game_over.tscn")
 
 func _ready():

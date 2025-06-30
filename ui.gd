@@ -9,6 +9,7 @@ func _ready():
 	get_node("MoneyPanel").position = Vector2(605 ,0)
 
 func _process(_delta):
+	get_node("MoneyPanel/VBoxContainer/HBoxContainer/MoneyCounter").set_text(str(PlayerItems.get_money()))
 	get_node("Panel/VBoxContainer/HBoxContainer/GarlicCounter").set_text(str(PlayerItems.get_garlic()))
 	get_node("Panel/VBoxContainer/HBoxContainer2/PotatoCounter").set_text(str(PlayerItems.get_potato()))
 	get_node("Panel/VBoxContainer/HBoxContainer3/TomatoCounter").set_text(str(PlayerItems.get_tomato()))

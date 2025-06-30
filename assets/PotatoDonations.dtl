@@ -1,7 +1,12 @@
 join PotatoBuyer center
-Be so for real right now. Do you want to give me a potato?
+PotatoBuyer: Do you want to give me a potato?
 - Sure! Here!
-	Thanks!!
-- I don't have one.
-	Nobody likes selfish people.
+	if {PlayerItems.potato}  >  0:
+		PotatoBuyer: Thanks for the potato!
+		do PlayerItems.add_money(1)
+		do PlayerItems.del_potato(1)
+	else:
+		PotatoBuyer: You don't have enough potatoes to spare.
+- Can't spare one.
+	PotatoBuyer: I like 'em baked. Fried. Hashed. Chopped. Scalloped. Potatoes are the best. Bring me some and I'll be just about as grateful as a kitten fresh out of a tree.
 leave PotatoBuyer [animation="Slide Out Right" length="1.0" wait="true"]

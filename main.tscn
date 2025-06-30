@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://8yrowhomjn3x"]
 
 [ext_resource type="Script" uid="uid://bji32psvlyxk7" path="res://main.gd" id="1_b2srk"]
-[ext_resource type="Texture2D" uid="uid://ia1oglemkhn5" path="res://assets/Wall.png" id="2_yeenr"]
+[ext_resource type="Texture2D" uid="uid://dmer2juv2qkxs" path="res://assets/Column2.png" id="2_efxa6"]
 [ext_resource type="Texture2D" uid="uid://d2tcr4g5xkkkq" path="res://assets/pexels-photo-301717.jpeg" id="3_voj3y"]
 [ext_resource type="PackedScene" uid="uid://cwt44x3500kko" path="res://vegetable_factory.tscn" id="4_0e48k"]
 [ext_resource type="Texture2D" uid="uid://6vrqpoxfo5er" path="res://assets/Carrot.png" id="4_d7qv8"]
-[ext_resource type="Texture2D" uid="uid://cib7srqfgmo2u" path="res://assets/buskettexture.png" id="4_gqcq7"]
+[ext_resource type="Texture2D" uid="uid://k7c3ffd82ck5" path="res://assets/background_tile.png" id="4_efxa6"]
 [ext_resource type="Theme" uid="uid://b5j656g6m0u8r" path="res://cropdrop_default_scene.tres" id="5_vpsxp"]
 [ext_resource type="Script" uid="uid://cxe8deg8dke2g" path="res://VegetableChart.gd" id="6_61vt5"]
 [ext_resource type="Texture2D" uid="uid://br7xuuewyxexx" path="res://assets/Kenney UI/shaded-dark/shadedDark31.png" id="9_574bm"]
@@ -25,7 +25,7 @@ script = ExtResource("1_b2srk")
 [node name="Playfield" type="Node2D" parent="."]
 
 [node name="Floor" type="Node2D" parent="Playfield"]
-position = Vector2(-29, 335)
+position = Vector2(-29, 356)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Floor"]
 position = Vector2(558, 570)
@@ -36,13 +36,13 @@ shape = SubResource("RectangleShape2D_c6kcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Floor/StaticBody2D"]
 z_index = 2
-position = Vector2(28, -30)
+position = Vector2(-228, -43)
 rotation = 1.5708
 scale = Vector2(2, 2)
-texture = ExtResource("2_yeenr")
+texture = ExtResource("2_efxa6")
 
 [node name="Wall1" type="Node2D" parent="Playfield"]
-position = Vector2(577, -148)
+position = Vector2(555, -129)
 rotation = 1.5708
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Wall1"]
@@ -52,15 +52,22 @@ position = Vector2(558, 570)
 position = Vector2(26.502, 12.9952)
 shape = SubResource("RectangleShape2D_c6kcq")
 
-[node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
+[node name="Column" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
 z_index = 2
-position = Vector2(-80, -15)
+position = Vector2(116, -33)
 rotation = 1.5708
 scale = Vector2(2, 2)
-texture = ExtResource("2_yeenr")
+texture = ExtResource("2_efxa6")
+
+[node name="Column2" type="Sprite2D" parent="Playfield/Wall1/StaticBody2D"]
+z_index = 2
+position = Vector2(-524, -32.9977)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_efxa6")
 
 [node name="Wall2" type="Node2D" parent="Playfield"]
-position = Vector2(1173, -172)
+position = Vector2(1184, -151)
 rotation = 1.5708
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Playfield/Wall2"]
@@ -70,12 +77,19 @@ position = Vector2(558, 570)
 position = Vector2(1.62595, -5.99969)
 shape = SubResource("RectangleShape2D_c6kcq")
 
-[node name="Sprite2D" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
+[node name="Column" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
 z_index = 2
-position = Vector2(-55.9998, 23.9999)
+position = Vector2(138, 31.9995)
 rotation = 1.5708
 scale = Vector2(2, 2)
-texture = ExtResource("2_yeenr")
+texture = ExtResource("2_efxa6")
+
+[node name="Column2" type="Sprite2D" parent="Playfield/Wall2/StaticBody2D"]
+z_index = 2
+position = Vector2(-502, 32)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_efxa6")
 
 [node name="OutOfBounds" type="Node2D" parent="Playfield"]
 position = Vector2(320, -25)
@@ -94,11 +108,16 @@ rotation = 1.5708
 scale = Vector2(1.56396, 1.7298)
 texture = ExtResource("3_voj3y")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Playfield/Background"]
-modulate = Color(1, 1, 1, 0.301961)
-position = Vector2(331, 417)
-scale = Vector2(4, 4)
-texture = ExtResource("4_gqcq7")
+[node name="TextureRect" type="TextureRect" parent="Playfield/Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_efxa6")
+stretch_mode = 1
 
 [node name="VegetableFactory" parent="." instance=ExtResource("4_0e48k")]
 
